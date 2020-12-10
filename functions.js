@@ -10,7 +10,7 @@ function init(){
 function fadeInText(){
     this.getElementsByTagName("p")[0].style.visibility = "visible";
     this.getElementsByTagName("p")[0].style.fontSize = "150%";
-} 
+}  
 function fadeOutText(){
     this.getElementsByTagName("p")[0].style.visibility = "hidden";
 }

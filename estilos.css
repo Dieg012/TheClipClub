@@ -27,14 +27,19 @@ footer{
 }
 
 /*ARTISTS*/
+.card{
+    width: 75%;
+    position: relative;
+}
+
 .ex span{
     opacity: 0;
-    transition: opacity 1300ms;
+    transition: opacity 1100ms;
     font-size: x-large;
 }
 
 .ex span:nth-child(1)  { transition-delay:  200ms }
-.ex span:nth-child(2)  { transition-delay: 1200ms }
+.ex span:nth-child(2)  { transition-delay: 1000ms }
 .ex span:nth-child(3)  { transition-delay:  800ms }
 .ex span:nth-child(4)  { transition-delay:  300ms }
 .ex span:nth-child(5)  { transition-delay:  700ms }
@@ -46,7 +51,6 @@ footer{
 
 .ex:hover span {
     opacity: 1;
-    
 }
 
 /*FLIP CARD*/
@@ -80,20 +84,14 @@ footer{
 }
 
 .flip-card-front {
-    background-color: #bbb;
     color: black;
+    background-color: white;
 }
 
 .flip-card-back {
     background-color: #bbb;
     color: white;
     transform: rotateY(180deg);
-}
-
-/*ARTIST CARDS*/
-.card{
-    width: 75%;
-    position: relative;
 }
 
 
