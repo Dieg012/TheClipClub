@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+    
+}
+body{
+    
+}
+#fondo{
+   
+    background-image: url('img/fondo.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+.nav-item{
+    list-style: none;
+}
+.form-signin{
+    visibility: hidden;
+    background-color: #bbe1fa;
+    margin: auto;
+    position: relative;
+   
+   
+}
+.form-label-group{
+    position: relative;
+    margin-bottom: 1rem;
+
+
+}
+.form-label-group input{
+    height: 3rem;
+    padding: 1rem;
+    
+}
+.from-control{
+    display: block;
+    width: 70%;
+}
+#send{
+    width: 30%;
+    margin-left: 65px;
+}
+
+.modal-body{
+  
+    margin-left: 125px;
+}
+.modal-footer{
+  
+    background-color: #bbe1fa;
+}
+.close{
+    position: 0;
+}
+#cerrar{
+    width: 20px;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+#section{
+    background-color: #bbe1fa;
+    height: 650px;
+    border-radius: 350px;
+    position:absolute;
+    top: 80px;
+    right: -200px;
+    padding: 100px;
+}
+
+#section div div div a{
+    font-size: 24px;
+    background-color: #3282b8;
+    border-radius: 25px;
+    padding-bottom: 2px;
+  
+    text-decoration: none;
+    color: #1b262c;
+    padding: 5px;
+}
+#section div div div a:hover{
+ background-color: #e0e9f3;
+ 
+}
+#row1{
+    margin-left: 50px;
+}
+#row2{
+    margin-left: -10px;
+}
+#row3{
+    margin-left: 30px;
+}
+#bienvenida h1{
+    font-size: 48px;
+    margin-top:100px;
+   
+
+}
+footer{
+    padding: 10px;
+    background-color: rgb(27, 38, 44);
+    bottom: -300px;
+}
+h3{
+    color: white;
+}
+footer li a{
+    color: rgb(196, 176, 176);
+    text-decoration: none;
+
+}
+footer li a:hover  {
+   
+        text-decoration: none;
+
+}
+#unete{
+    background-color: #3282b8;
+
+}
+.card{
+    margin-left: 120px;
+    margin-top: 20px;
+}
+#actividad{
+    margin-left: 65px;
+    margin-top: 50px;
+}
+.card-body{
+    background-color:#bbe1fa ;
+    font-size: 14px;
+}
+.card-title{
+    background-color:#bbe1fa ;
+    font-size: 24px;
+    font-weight: bold;
+}
+h4{
+    color: #bbe1fa;
+}
+h6{
+    font-size: 28px;
+}
+#roll{
+    height: 100px;
+    margin-top: 125px;
+}
+
+#lista{
+    margin-left: 300px;
+}
+
+
+@media only screen and (max-width: 1800px) {
+    #section{
+        visibility: hidden;
+    }
+
+
+
+}
+
+
+@media only screen and (max-width: 550px) {
+    #bienvenida{
+        margin-top: -100px;
+        
+    }
+    .nav-item{
+        visibility: hidden;
+    }
+ 
+    .carousel-item{
+        max-width: 350px;
+    }
+    .navbar-brand{
+        float: left;
+    }
+    #lista{
+        margin-left: 100px;
+    }
+    h6{
+        font-size: 12px;
+    }
+}
