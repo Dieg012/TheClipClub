@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class="container-fluid">
+    <div></div>
+    <header class="row bg-white sticky-top p-1 justify-content-between align-items-center border-bottom">
+        <section class="col-2 col-md-2">
+            <img id="logo" src="imgs/logo.png" alt="">
+        </section>
+        <section class="col-10 col-md-6">
+            <div class="row justify-content-end align-items-center">
+                <section class="col-4 col-md-3 col-lg-2 p-0">
+                    <button class="btn btn-primary">Log in</button>
+                </section>
+                <section class="col-3 col-md-3 col-lg-2 p-0">
+                    <a href="">Sign in!</a>
+                </section>
+                <div class="col-4 col-lg-2 p-0 dropdown">
+                    <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lang
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Euskera</a>
+                        <a class="dropdown-item" href="#">English</a>
+                        <a class="dropdown-item" href="#">Español</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="row justify-content-center align-items-center">
+        <section id="welcome" class="container-fluid">
+            <section class="row p-4 align-items-center border-bottom">
+                <section class="col-12 col-lg-7">
+                    <div class="bg-primary text-light p-4 rounded">
+                        <h1>Welcome!</h1>
+                        <p id="subtitulo">Meet new artists and be part of amazing projects in a matter of seconds. Share your talent and discover new ones</p>
+                    </div>
+                </section>
+                <section class="col-12 col-lg-5">
+                    <div class="row p-2 justify-content-center align-items-center">
+                        <div class="flip-card col-6 align-items-center mb-1">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front rounded">
+                                    <img class="icono" src="imgs/cam.png" alt="Avatar">
+                                </div>
+                                <div class="flip-card-back rounded d-flex align-items-center">
+                                    <p class="card-text">Share your projects and be part of other ones</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card col-6 align-items-center mb-1">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front rounded">
+                                    <img class="icono" src="imgs/user.png" alt="Avatar">
+                                </div>
+                                <div class="flip-card-back d-flex align-items-center rounded">
+                                    <p class="card-text">Follow other artists and make great partners</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card col-6 ">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front rounded">
+                                    <img class="icono" src="imgs/mensaje.png" alt="Avatar">
+                                </div>
+                                <div class="flip-card-back d-flex align-items-center rounded">
+                                    <p class="card-text">Communicate between your projects member</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card col-6 ">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front rounded">
+                                    <img class="icono" src="imgs/search.png" alt="Avatar">
+                                </div>
+                                <div class="flip-card-back d-flex align-items-center rounded">
+                                    <p class="card-text">Explore projects of other people and discover new artists</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section class="col-12 col-xl-8">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img class="d-block w-100" src="imgs/rodaje1.jpeg" alt="First slide">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img class="d-block w-100" src="imgs/rodaje2.jpeg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img class="d-block w-100" src="imgs/rodaje3.jpeg" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <section class="col-12 col-xl-4">
+            <div class="jumbotron">
+                <h2 class="display-4">Explore!</h2>
+                <section class="row justify-content-center">
+                    <h2 class="col-12">Search projects by tags</h2>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#film</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#shortfilm</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#documentary</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#videoclip</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#photoshoot</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#horror</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#comedy</a>
+                    <a class="btn btn-primary rounded-circle m-3" href="">#drama</a>
+                </section>
+                <hr class="my-4">
+                <section class="row justify-content-center">
+                    <h2 class="col-12">Discover new artists</h2>
+                    <a class="btn btn-primary m-3" href="">Actors</a>
+                    <a class="btn btn-primary m-3" href="">Directors</a>
+                    <a class="btn btn-primary m-3" href="">Technicians</a>
+                    <a class="btn btn-primary m-3" href="">Producers</a>
+                    <a class="btn btn-primary m-3" href="">Writers</a>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer class="row p-3 justify-content-center align-items-center text-white">
+        <p class="m-0 p-0">TheClipClub Company&copy; 2020</p>
+    </footer>
+</body>
+</html>

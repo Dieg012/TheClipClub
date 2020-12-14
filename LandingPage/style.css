@@ -1,0 +1,126 @@
+#logo {
+    width: 30%;
+}
+main {
+    background-color: white;
+}
+#welcome {
+    background-color: black;
+}
+h1 {
+    font-size: 4em;
+}
+.btn {
+    transition: 0.5s;
+}
+.btn:hover {
+    background-color: black;
+    border-color: black;
+}
+a {
+    transition: 0.5s;
+}
+a:hover {
+    color: black;
+}
+.dropdown-item:hover {
+    background-color: lightgray;
+}
+#subtitulo {
+    font-size: 2em;
+}
+.icono {
+    width: 50%;
+}
+/* Flipping-Card */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 130px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    background-color: white;
+    color: black;
+}
+.flip-card-back {
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+}
+.card-text {
+    font-size: 1.3em;
+}
+/* --- */
+footer {
+    background-color: black;
+}
+@media only screen and (max-width: 426px){
+    h1 {
+        font-size: 2.5em;
+    }
+    #subtitulo {
+        font-size: 1.25em;
+    }
+    .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 90px;
+    }
+    .card-text {
+        font-size: 0.6em;
+    }
+}
+@media only screen and (max-width: 425px) {
+    #logo {
+        width: 100%;
+    }
+    .icono {
+        width: 40%;
+    }
+    a {
+        font-size: 0.8em;
+    }
+    .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 60px;
+    }
+}
+@media only screen and (max-width: 769px) and (min-width: 426px){
+    .icono {
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 770px){
+    .icono {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 1439px) and (min-width: 1025px){
+    .icono {
+        width: 50%;
+    }
+}
+@media only screen and (min-width: 2560px){
+    .icono {
+        width: 25%;
+    }
+}
