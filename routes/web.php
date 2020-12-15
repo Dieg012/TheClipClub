@@ -33,5 +33,5 @@ Route::group(['middleware' => ['web']], function () {
         })->where([
             'lang' => 'en|es'
         ]);
-    
+
     });
