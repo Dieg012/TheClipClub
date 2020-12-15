@@ -24,9 +24,14 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'phone' => $this->faker->phoneNumber,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'role1' > $this->faker->role1,
+            'role2' > $this->faker->role2,
+            'role3' > $this->faker->role3,
+            'role4' > $this->faker->role4,
             'remember_token' => Str::random(10),
         ];
     }

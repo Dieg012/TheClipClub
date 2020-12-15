@@ -15,7 +15,8 @@ class UserController extends Controller
             'role1' => $request->get('role1'), 
             'role2' => $request->get('role2'), 
             'role3' => $request->get('role3'), 
-            'role4' => $request->get('role4')
+            'role4' => $request->get('role4'),
         ]);
     }
+
 }
