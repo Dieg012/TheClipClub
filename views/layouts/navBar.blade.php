@@ -9,6 +9,7 @@
 
 </head>
 <body>
+  <div class="container-fluid">
 
   <!-- Navegador -->
 
@@ -25,6 +26,7 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">Sign In</button>
       </div>
     </div>
+    
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Idioma
@@ -33,7 +35,38 @@
         <a class="dropdown-item" href="#">Euskera</a>
         <a class="dropdown-item" href="#">English</a>
       </li>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#admin">Admin</button>
   </nav>
+  
+
+
+    <!-- Modal Y Admin -->
+
+  <div class="modal fade" id="admin" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog"  id="loginModal">
+      <div class="modal-content  bg-secondary">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Admin Area</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body " id="loginModalBody"> 
+                <div class="from-label-group">
+                  <div class="col-md-9 mb-3">
+                    <label for="validationDefault04">Email</label>
+                    <input type="text" class="form-control" id="validationDefault04" required>
+                  </div>
+                  <div class="col-md-9 mb-3">
+                    <label for="validationDefault05">Password</label>
+                    <input type="text" class="form-control" id="validationDefault05" required>
+                  </div>
+                </div>
+                    <button id="send" class="btn btn-primary btn-block mt-3" type="submit">Login</button>       
+        </div>
+      </div>
+    </div>
+</div>
 
     <!-- Modal Y Login -->
 
@@ -168,6 +201,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
    
