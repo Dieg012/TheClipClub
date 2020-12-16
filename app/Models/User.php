@@ -31,7 +31,9 @@ class User extends Authenticatable
         'role1',
         'role2',
         'role3',
-        'role4'
+        'role4',
+        'bio',
+        'img',
     ];
 
     /**

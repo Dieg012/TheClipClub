@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('role2')->nullable();
             $table->string('role3')->nullable();
             $table->string('role4')->nullable();
+            $table->string('img')->nullable();
+            $table->string('bio')->nullable();
 
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
