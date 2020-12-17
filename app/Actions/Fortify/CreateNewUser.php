@@ -40,7 +40,7 @@ class CreateNewUser implements CreatesNewUsers
         if(!isset($input['role4'])){
             $input['role4'] = '';
         }
-        
+
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
@@ -53,6 +53,6 @@ class CreateNewUser implements CreatesNewUsers
             'bio' => $input['bio'],
             'password' => Hash::make($input['password'])
         ]);
-        
+
     }
 }

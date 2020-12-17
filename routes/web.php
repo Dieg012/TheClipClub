@@ -35,3 +35,4 @@ Route::group(['middleware' => ['web']], function () {
         ]);
 
     });
+Route::get('/profile', 'App\Http\Controllers\UserController@createProfile')->name('profile');

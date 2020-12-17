@@ -5,6 +5,7 @@ use App\Models;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -36,5 +37,10 @@ class UserController extends Controller
             'password' => Hash::make($request['password'])
         ]);
         return view('dashboard');
+    }
+
+    public function createProfile() {
+        $user = Auth::user();
+        return view('profile')->with('user', $user);
     }
 }
