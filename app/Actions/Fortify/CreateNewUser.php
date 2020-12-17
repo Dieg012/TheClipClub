@@ -22,18 +22,25 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:25', 'unique:users'],
-            'phone' => ['required', 'integer', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:9', 'unique:users'],
-            'role1' => ['string'],
-            'role2' => ['string'],
-            'role3' => ['string'],
-            'role4' => ['string'],
-//          'img' => ['end_with:jpg, jpeg, png'],
+            'phone' => ['required', 'numeric', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'digits_between:1,10', 'unique:users'],
+            'img' => ['ends_with: .jpg,.png,.jpeg'],
             'bio' => ['string', 'max:255'],
             'password' => $this->passwordRules()
         ])->validate();
+
         if(!isset($input['role1'])){
             $input['role1'] = '';
         }
+        if(!isset($input['role2'])){
+            $input['role2'] = '';
+        }
+        if(!isset($input['role3'])){
+            $input['role3'] = '';
+        }
+        if(!isset($input['role4'])){
+            $input['role4'] = '';
+        }
+        
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],

@@ -47,10 +47,9 @@
           <div class="form-row">
             <div class="col-md-12 mb-3">
             <label for="customFile">Image</label>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile" name="img">
-              <label class="custom-file-label" for="customFile">Choose an Image for Profile</label>
-              </div>
+            <div class="form-group">
+              <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
+            </div>
             </div>
           </div>
          
