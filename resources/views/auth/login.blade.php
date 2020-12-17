@@ -13,7 +13,7 @@
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
         </x-slot>
-
+        
         <x-jet-validation-errors class="mb-4" />
         <form action="{{route('login')}}}" method="post">
           @csrf
@@ -30,8 +30,8 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                    <button id="send" class="btn btn-primary btn-block m-0" type="submit">Send</button>
-                </div>
+                <button id="send" class="btn btn-primary btn-block m-0" type="submit">Send</button>
+            </div>
             
           </form>
     </x-jet-authentication-card>

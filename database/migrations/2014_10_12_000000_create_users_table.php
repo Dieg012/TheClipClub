@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('role4')->nullable();
             $table->string('img')->nullable();
             $table->string('bio')->nullable();
+            $table->boolean('isAdmin')->default(false);
 
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
