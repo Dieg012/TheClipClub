@@ -13,10 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::group(['middleware' => ['web']], function () {
+
+    Route::get('/', function () {
+            return view('welcome');
+        });
+     Route::get('lang/{lang}', function ($lang) {
+            session(['lang' => $lang]);
+            return \Redirect::back();
+        })->where([
+            'lang' => 'en|es'
+        ]);
+    
+    });
