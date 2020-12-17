@@ -21,3 +21,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::get('/profile', 'App\Http\Controllers\UserController@createProfile')->name('profile');
