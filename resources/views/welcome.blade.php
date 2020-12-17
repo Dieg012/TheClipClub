@@ -7,8 +7,6 @@
     <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
 </head>
 <body>
-
-
   <!-- Navegador -->
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
