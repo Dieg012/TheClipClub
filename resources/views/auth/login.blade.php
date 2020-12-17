@@ -15,16 +15,16 @@
         </x-slot>
         
         <x-jet-validation-errors class="mb-4" />
-        <form action="{{route('login')}}}" method="post">
+        <form action="{{route('login')}}" method="post">
           @csrf
             <div class="from-label-group ">
                   <div class="col-md-12 mb-3">
                     <label for="validationDefault04">Email</label>
-                    <input type="text" class="form-control" id="validationDefault04" required>
+                    <input type="email" class="form-control" name="email" id="validationDefault04" required>
                     </div>
                   <div class="col-md-12 mb-3">
                     <label for="validationDefault05">Password</label>
-                    <input type="text" class="form-control" id="validationDefault05" required>
+                    <input type="password" class="form-control" name="password" id="validationDefault05" required>
                   </div>
                   
             </div>
