@@ -19,78 +19,78 @@
         @csrf
           <div class="form-row">
             <div class="col-md-6 mb-3">
-              <label for="name">Username</label>
+              <label for="name">{{trans('messages.username')}}</label>
               <input type="text" class="form-control" id="name" name="name" :value="old('name')" required>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="phone">Phone number</label>
+              <label for="phone">{{trans('messages.phone')}}</label>
               <input type="tel" class="form-control" id="phone" name="phone" required>
             </div>
           </div>
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <label for="email">Email</label>
+              <label for="email">{{trans('messages.email')}}</label>
               <input type="email" class="form-control" id="email" name="email" required>
             </div>
           </div>
           <div class="form-row">
           <div class="col-md-6 mb-3">
-              <label for="password">Password</label>
+              <label for="password">{{trans('messages.password')}}</label>
               <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="col-md-6 mb-3">
-              <label for="password_confirmation">Confirm Password</label>
+              <label for="password_confirmation">{{trans('messages.confirmPassword')}}</label>
               <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="col-md-12 mb-3">
-            <label for="customFile">Image</label>
+            <label for="customFile">{{trans('messages.image')}}</label>
             <div class="form-group">
               <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
             </div>
             </div>
           </div>
          
-            <label for="custom-control-input">Role</label>
+            <label for="custom-control-input">{{trans('messages.role')}}</label>
             <div class="col-md-12 mb-3">
                 <div class="form-row">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input " name="role1" value="Director" id="role1">
-                        <label class="custom-control-label" for="role1">Director</label>
+                        <input type="checkbox" class="custom-control-input " name="role1" value="{{trans('messages.director')}}" id="role1">
+                        <label class="custom-control-label" for="role1">{{trans('messages.director')}}</label>
                     </div>
 
                     <div class="custom-control custom-checkbox ml-4">
-                        <input type="checkbox" class="custom-control-input" name="role2" value="Actor" id="role2">
-                        <label class="custom-control-label" for="role2">Actor</label>
+                        <input type="checkbox" class="custom-control-input" name="role2" value="{{trans('messages.actor')}}" id="role2">
+                        <label class="custom-control-label" for="role2">{{trans('messages.actor')}}</label>
                     </div>
 
                     <div class="custom-control custom-checkbox ml-4">
-                        <input type="checkbox" class="custom-control-input" name="role3" value="Screen Writer" id="role3">
-                        <label class="custom-control-label" for="role3">Screen Writer</label>
+                        <input type="checkbox" class="custom-control-input" name="role3" value="{{trans('messages.writer')}}" id="role3">
+                        <label class="custom-control-label" for="role3">Screen {{trans('messages.writer')}}</label>
                     </div>
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="role4" value="Technician" id="role4">
-                        <label class="custom-control-label" for="role4">Technician</label>
+                        <input type="checkbox" class="custom-control-input" name="role4" value="{{trans('messages.tech')}}" id="role4">
+                        <label class="custom-control-label" for="role4">{{trans('messages.tech')}}</label>
                     </div>
                 </div>
           </div>
         
           <div class="form-row">
             <div class="col-md-12 mb-3">
-              <label for="bio">Biography</label>
+              <label for="bio">{{trans('messages.bio')}}</label>
               <textarea type="text" class="form-control" id="bio" name="bio" placeholder="Somethign you want to say to the world?" required></textarea>
             </div>
           </div>
           <div class="form-group">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="agree" required>
-                <label class="form-check-label" for="agree">Agree to terms and conditions</label>
+                <label class="form-check-label" for="agree">{{trans('messages.terms')}}</label>
               </div>
           </div>
-            <button type="submit" class="btn btn-primary float-right">Send</button>
+            <button type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
       </form>
     </x-jet-authentication-card>
 </x-guest-layout>
