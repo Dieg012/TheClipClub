@@ -40,7 +40,6 @@ class CreateNewUser implements CreatesNewUsers
         if(!isset($input['role4'])){
             $input['role4'] = '';
         }
-
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
