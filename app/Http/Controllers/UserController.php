@@ -19,8 +19,8 @@ class UserController extends Controller
             'role4' => ['string'],
             'img' => ['image'],
             'bio' => ['string', 'max:255'],
-            'password' => ['string', 'max:255']
-            /*'password' => Password::passwordRules()*/
+            'password' => ['string', 'max:255'],
+            'password' => Password::passwordRules()
         ])->validate();
 
         User::create([

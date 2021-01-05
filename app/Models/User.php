@@ -36,6 +36,10 @@ class User extends Authenticatable
         'img',
     ];
 
+    public function chats() {
+        return $this->hasMany(Chat::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
