@@ -40,6 +40,10 @@ class User extends Authenticatable
         return $this->hasMany(Chat::class);
     }
 
+    public function projects(){
+        return $this->hasMany(Project::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
