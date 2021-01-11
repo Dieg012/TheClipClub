@@ -92,7 +92,7 @@ return[
     //profile
 
     'followers'=>'Followers',
-    'followed'=>'Followed',
+    'followeds'=>'Followeds',
     'projects'=>'Projects',
     'settings'=>'Settings',
     'logout'=>'Logout',

@@ -91,7 +91,7 @@ return[
     //profile
 
     'followers'=>'Seguidores',
-    'followed'=>'Seguidos',
+    'followeds'=>'Seguidos',
     'projects'=>'Proyectos',
     'settings'=>'Opciones',
     'logout'=>'Cerrar Sesión',
