@@ -17,7 +17,7 @@
                                     @csrf
                                     <img src="" alt="">{{$followed->img}}
                                     <span>{{$followed->name}}</span>
-                                    <input type="submit" value="unfollow">
+                                    <input type="submit" value="{{trans('messages.unfollow')}}">
                                 </form>
                             </div>
                         @endforeach

@@ -2,8 +2,8 @@
 @section('profileContent')
 <main class="container-fluid">
     <nav class="row align-items-center border-bottom">
-        <div class="col-12 col-md-4">
-            <img id="userImg" src="" alt="">
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+            <img style="width: 200px; height: 200px" class="rounded-circle" src="\storage\{{$user->img}}" alt="{{$user->img}}" >
         </div>
         <p class="col-12 col-md-4" id="userName">{{$user->name}}</p>
         <section class="col-6 col-md-2 flex-column" id="followers">

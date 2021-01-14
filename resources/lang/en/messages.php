@@ -98,6 +98,11 @@ return[
     'logout'=>'Logout',
     'manageAccount'=>'Manage Account',
 
+    //followers/followeds
+
+    'unfollow'=>'unfollow',
+    'follow'=>'follow',
+
     //menu
 
     'english'=>'English',

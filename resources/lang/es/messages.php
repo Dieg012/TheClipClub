@@ -97,6 +97,11 @@ return[
     'logout'=>'Cerrar Sesión',
     'manageAccount'=>'Gestionar Cuenta',
 
+    //followers/followed
+
+    'unfollow'=>'siguiendo',
+    'follow'=>'seguir',
+
     //menu
 
     'english'=>'Inglés',

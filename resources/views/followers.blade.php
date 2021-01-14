@@ -28,14 +28,14 @@
                                         @csrf
                                         <img src="" alt="">{{$follower->img}}
                                         <span>{{$follower->name}}</span>
-                                        <input type="submit" value="unfollow">
+                                        <input type="submit" value="{{trans('messages.unfollow')}}">
                                     </form>
                                 @else
                                     <form action="/follow/{{$follower->id}}" method="POST">
                                         @csrf
                                         <img src="" alt="">{{$follower->img}}
                                         <span>{{$follower->name}}</span>
-                                        <input type="submit" value="follow">
+                                        <input type="submit" value="{{trans('messages.follow')}}">
                                     </form>
                                 @endif
                             </div>
