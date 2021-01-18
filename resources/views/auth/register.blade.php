@@ -15,8 +15,9 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form  method="POST" action="{{route ('register')}}">
+        <form  method="POST" action="{{route ('register')}}" enctype="multipart/form-data" >
         @csrf
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label for="name">{{trans('messages.username')}}</label>
@@ -52,7 +53,7 @@
             </div>
             </div>
           </div>
-         
+
             <label for="custom-control-input">{{trans('messages.role')}}</label>
             <div class="col-md-12 mb-3">
                 <div class="form-row">
@@ -77,7 +78,7 @@
                     </div>
                 </div>
           </div>
-        
+
           <div class="form-row">
             <div class="col-md-12 mb-3">
               <label for="bio">{{trans('messages.bio')}}</label>
