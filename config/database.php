@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+//$DATABASE_URL=parse_url('mysql://bb71b274fe00d3:094abb72@eu-cdbr-west-03.cleardb.net/heroku_1898b986e691bec?reconnect=true');
 
 return [
 
