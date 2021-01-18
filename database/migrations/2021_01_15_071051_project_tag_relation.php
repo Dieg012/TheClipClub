@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProjectImgs extends Migration
+class ProjectTagRelation extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class ProjectImgs extends Migration
      */
     public function up()
     {
-        Schema::create('projectImages', function (Blueprint $table) {
+        Schema::create('project_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('name');            
-            $table->binary('img');
-            $table->foreignId('project_id')->constrained();
+            $table->foreignId('project_id');
+            $table->string('tag');
+            $table->foreign('tag')->references('tag')->on('tags');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class ProjectImgs extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projectImages');
+        Schema::dropIfExists('project_tag');
     }
 }

@@ -10,11 +10,18 @@ class Project extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'category',
+        'director',
+        'actor',
+        'thechnitian',
+        'producer',
+        'screenwriter',
+        'img',
     ];
-    //Por determinar
-    public function images(){
-        return $this->hasMany('images');
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class, 'project_tag', 'project_id', 'tag');
     }
 
     public function user(){

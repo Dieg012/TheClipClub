@@ -5,16 +5,10 @@
             @csrf
         </h2>
     </x-slot>
+
     @if(session('status'))
         {{session('status')}}
     @endif
-
-    @can('Admin')
-    <div>
-        <h1>admin</h1>
-    </div>
-    @endcan
-
     
 
     <div class="py-12">

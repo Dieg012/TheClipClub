@@ -1,77 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-    <form action="createProject" method="post">
-    @csrf
-        <div class="form-group">
-            <label>Project name</label>
-            <input type="text" class="form-control" name="name" placeholder="name@example.com">
-        </div>
-        <hr>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Select a category</label>
-            <select class="form-control" name="category">
-              <option>Category</option>
-              <option>Film</option>
-              <option>Music video</option>
-              <option>Photo shoot</option>
-            </select>
-        </div>
-        <hr>
-        <div>
-            <label>Needed artists</label>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                  Director
-                </label>
+<x-app-layout>
+<div class="container-fluid">
+<x-jet-validation-errors class="mb-4" />
+        <form action="{{route('createProject', Auth::user()->id)}}" method="post">
+        @csrf
+            <div class="form-group">
+                <label>Project name</label>
+                <input type="text" class="form-control" name="name" maxlenght="20" required>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                  Actor
-                </label>
+            <hr>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select a category</label>
+                <select class="form-control" name="category" required>
+                <option disabled selected value >Category</option>
+                <option value="Film">Film</option>
+                <option value="Short Film">Short Film</option>
+                <option value="Music video">Music video</option>
+                <option value="Photo shoot">Photo shoot</option>
+                </select>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                  Technitian
-                </label>
+            <hr>
+            <div class="form-group">
+                <label>Project Tags</label>
+                <input class="form-control" type="text" name="tags" aria-describedby="tagHelp">
+                <small id="tagHelp" class="form-text text-muted">This will make easier for people to search your project</small>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                  Producer
-                </label>
+            <hr>
+            <div>
+                <label>Needed artists</label>
+                <div class="form-group form-row">
+                    <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input" type="checkbox" value="Director" name="director" id="director">
+                        <label class="custom-control-label" for="director">Director</label>
+                    </div>
+                    <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input" type="checkbox" value="Actor" name="actor" id="actor"> 
+                        <label class="custom-control-label" for="actor">Actor</label>
+                    </div>
+                    <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input" type="checkbox" value="Technitian" name="technitian" id="technitian">
+                        <label class="custom-control-label" for="technitian">Technitian</label>
+                    </div>
+                    <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input" type="checkbox" value="Producer" name="producer" id="producer">
+                        <label class="custom-control-label" for="producer">Producer</label>
+                    </div>
+                    <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input" type="checkbox" value="Screenwriter" name="screenwriter" id="screenwriter">
+                        <label class="custom-control-label" for="screenwriter">Screenwriter</label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Screenwriter
-                </label>
+            <hr>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Image</label>
+                <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
             </div>
-        </div>
-        <hr>
-        <div class="form-group">
-            <label for="exampleFormControlFile1">Image</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-        </div>
-        <hr>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Description</label>
-            <textarea class="form-control" name="description" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-    </form>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-</body>
-</html>
+            <hr>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" name="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</x-app-layout>

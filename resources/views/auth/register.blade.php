@@ -57,7 +57,7 @@
             <div class="col-md-12 mb-3">
                 <div class="form-row">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input " name="role1" value="{{trans('messages.director')}}" id="role1">
+                        <input type="checkbox" class="custom-control-input" name="role1" value="{{trans('messages.director')}}" id="role1">
                         <label class="custom-control-label" for="role1">{{trans('messages.director')}}</label>
                     </div>
 

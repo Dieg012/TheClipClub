@@ -15,6 +15,26 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                @cannot('Admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('myProjects') }}" :active="request()->routeIs('myProjects')">
+                        {{ __('My Projects') }}
+                    </x-jet-nav-link>
+                </div>
+                
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('create') }}" :active="request()->routeIs('create')">
+                        {{ __('Create Project') }}
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                @can('Admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('allProjects') }}" :active="request()->routeIs('allProjects')">
+                        {{ __('All Projects') }}
+                    </x-jet-nav-link>
+                </div>
+                @endcan
             </div>
             
 

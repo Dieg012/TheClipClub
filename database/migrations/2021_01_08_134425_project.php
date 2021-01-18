@@ -16,9 +16,15 @@ class Project extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('category');            
             $table->text('description');
-            //$table->foreignId('user_id')->constrained();
+            $table->string('category');
+            $table->string('director')->nullable();
+            $table->string('actor')->nullable();
+            $table->string('technitian')->nullable();
+            $table->string('producer')->nullable();
+            $table->string('screenwriter')->nullable();
+            $table->binary('img')->nullable();
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }

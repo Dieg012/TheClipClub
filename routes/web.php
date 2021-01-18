@@ -1,6 +1,6 @@
 <?php
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
  
 
@@ -15,21 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/chat', 'chat')->middleware(['auth:sanctum', 'verified']);
+Route::view('/chat', 'chat')->middleware(['auth:sanctum']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-
 //PROJECTS
-Route::get('myProjects',[ProjectController::class, 'myProjects']);
-//Create
-Route::view('create', 'createProject');
-Route::post('createProject', [ProjectController::class, 'createProject']);
-
-Route::delete('delete/{id}', [ProjectController::class, 'deleteProject'])->name('delete_project');
-
+Route::get('allProjects', [ProjectController::class, 'allProjects'])->name('allProjects');
+Route::get('myProjects',[UserController::class, 'myProjects'])->name('myProjects');
+Route::view('create', 'createProject')->name('create');
+Route::post('createProject/{userId}', [ProjectController::class, 'createProject'])->name('createProject');
+Route::delete('deleteProject/{projectId}', [ProjectController::class, 'deleteProject'])->name('delete_project');
+Route::delete('deleteUser/{userId}', [UserController::class, 'deleteUser'])->name('delete_user');
 
 Route::group(['middleware' => ['web']], function () {
 
