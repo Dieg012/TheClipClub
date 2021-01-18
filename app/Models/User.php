@@ -68,6 +68,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
 
+    protected $dates = [
+        'deleted_at'
+    ];
+
     public function followers() {
         return $this->belongsToMany('\App\Models\User', 'followers', 'follower_id', 'followed_id')->withTimestamps();
     }
