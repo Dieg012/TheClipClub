@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -17,6 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    Use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -72,6 +74,10 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $appends = [
         'profile_photo_url',
+    ];
+
+    protected $dates = [
+        'deleted_at'
     ];
 
     public function followers() {

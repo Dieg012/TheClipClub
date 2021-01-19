@@ -10,7 +10,9 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="/">
+                <img src="\img\logo2.png" alt="">
+            </a>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -91,7 +93,8 @@
                 <label class="form-check-label" for="agree">{{trans('messages.terms')}}</label>
               </div>
           </div>
-            <button type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
+          <a href="/restoreAccount">Want to restore your account? Click Here</a>
+          <button type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
       </form>
     </x-jet-authentication-card>
 </x-guest-layout>
