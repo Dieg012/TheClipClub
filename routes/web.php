@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
 Route::view('/chat', 'chat')->middleware(['auth:sanctum']);
+
 
 Route::middleware(['auth:sanctum'])->get('/dashboard', function () {
     return view('dashboard');
@@ -51,5 +51,6 @@ Route::get('/followers', 'App\Http\Controllers\UserController@createFollowers')-
 Route::get('/followeds', 'App\Http\Controllers\UserController@createFolloweds')->name('followeds');
 Route::post('/follow/{id}', 'App\Http\Controllers\UserController@followUser');
 Route::post('/unfollow/{id}', 'App\Http\Controllers\UserController@unfollowUser');
-Route::view('/restoreAccount', 'auth.restoreAccount');
-Route::post('/restoreAccount', 'App\Http\Controllers\UserController@restoreAccount')->name('restoreAccount');
+Route::post('/registerTest', 'App\Http\Controllers\UserController@createUser')->name('registerTest');
+
+Route::post('/storageTest', 'App\Http\Controllers\UserController@save')->name('storageTest');
