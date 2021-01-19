@@ -29,6 +29,8 @@ Route::post('createProject/{userId}', [ProjectController::class, 'createProject'
 Route::delete('deleteProject/{projectId}', [ProjectController::class, 'deleteProject'])->name('delete_project');
 Route::delete('deleteUser/{userId}', [UserController::class, 'deleteUser'])->name('delete_user');
 
+Route::get('random', [UserController::class, 'getRandomProjects'])->name('random');
+
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
