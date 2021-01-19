@@ -108,7 +108,5 @@ return[
     'english'=>'English',
     'spanish'=>'Spanish',
     'home'=>'Home',
-    'profile'=>'Profile',
-
-    'restoreAccount'=>'We will send you a verification email to the account you register with. Follow the instructions and you will have your account back.',
+    'profile'=>'Profile'
 ];
