@@ -54,12 +54,10 @@ class ProjectController extends Controller
     } */
     public function saveTags($request, $user){
         $tags = $this->separateTags($request);
-        //CHECK IF TAGS ALREADY EXISTS
-        if(!$this->tagExists($tags)){
-            $this->createTag($tags);
-        } else if(!empty($this->someTagExist($tags))){
-            $newTags = someTagExists($tags);
-            $this->createTag($newTags);
+        //CHECK IF TAGS ALREADY EXISTS IF NOT CREATE THEM
+        $nonExistingTags = $this->tagExists($tags);
+        if(!empty($nonExistingTags)){
+            $this->createTag($nonExistingTags);
         }
         //Get las created last project -> attach tag to the project
         $projectList = $user->projects()->get();
@@ -68,22 +66,24 @@ class ProjectController extends Controller
             $lastProject->tags()->attach($tags[$i]);
         }
     }
-    public function someTagExist($tags){
+
+    public function tagExists($tags){
         $existingTags = Array();
         $nonExistingTags = Array();
-        foreach ($tags as $tag){
-            $t = Tag::where('tag', $tag)->get();
-            array_push($existingTags, $t);
-        }
-        //dd($existingTags);
-        foreach ($tags as $tag){
-            if(in_array($tag, $existingTags)){
-                array_push($nonExistingTags, $tag);
+        if(!empty(Tag::all())){
+            $allTags = Tag::all();
+            foreach ($allTags as $existingTag){
+                array_push($existingTags, $existingTag->tag);
+            }
+            foreach ($tags as $tag){
+                if(!in_array($tag, $existingTags)){
+                    array_push($nonExistingTags, $tag);
+                }
             }
         }
         return $nonExistingTags;
     }
-    public function tagExists($tags){
+    /* public function tagExists($tags){
         //GET EXISTING TAGS
         $existingTags = Array();
         foreach ($tags as $tag){
@@ -93,16 +93,16 @@ class ProjectController extends Controller
         //CHECK IF THE NEW TAG ALREADY EXISTS
         foreach ($tags as $tag){
             if(in_array($tag, $existingTags)){
-                return false;
+                return true;
             }
         }
-        return true;
-    }
+        return false;
+    } */
 
     public function createTag($tags){
-        for($i=0;$i< count($tags);$i++){
+        foreach($tags as $tag){
             Tag::create([
-                'tag' => $tags[$i],
+                'tag' => $tag,
             ]);
         }
     }
