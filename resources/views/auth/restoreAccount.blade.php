@@ -17,18 +17,13 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-        <form action="{{route('login')}}" method="post">
+        <form action="{{route('restoreAccount')}}" method="post">
           @csrf
             <div class="from-label-group ">
                   <div class="col-md-12 mb-3">
-                    <label for="validationDefault04">{{trans('messages.email')}}</label>
+                    <label for="validationDefault04">{{trans('messages.restoreAccount')}}</label>
                     <input type="email" class="form-control" name="email" id="validationDefault04" required>
                     </div>
-                  <div class="col-md-12 mb-3">
-                    <label for="validationDefault05">{{trans('messages.password')}}</label>
-                    <input type="password" class="form-control" name="password" id="validationDefault05" required>
-                  </div>
-
             </div>
 
             <div class="d-flex justify-content-center">

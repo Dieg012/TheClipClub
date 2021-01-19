@@ -19,6 +19,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
 
 class UserController extends Controller
 
@@ -77,5 +78,19 @@ class UserController extends Controller
         $user = \App\Models\User::findOrFail($id);
         $user->followers()->detach(Auth::user()->id);
         return back();
+    }
+
+    public function restoreAccount(Request $request) {
+        $user = \App\Models\User::withTrashed()->where('email', $request->email)->first();
+        $dbEmail = $user->email;
+        if($dbEmail = $request->email) {
+            $user->sendEmailVerificationNotification();
+            $user->email_verified_at = null;
+            $user->restore();
+
+            return $user->hasVerifiedEmail()
+                ? redirect()->intended(config('fortify.home'))
+                : app(VerifyEmailViewResponse::class);
+        }
     }
 }
