@@ -58,11 +58,6 @@ return [
         'null' => [
             'driver' => 'null',
         ],
-        
-        'larasocket' => [
-            'driver' => 'larasocket',
-            'token' => env('LARASOCKET_TOKEN'),
-        ],
 
     ],
 
