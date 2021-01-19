@@ -1,14 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-<<<<<<< HEAD
-
-use App\Models\User;
-use App\Models\Project;
-use App\Http\Controllers\ProjectController;
-use Illuminate\Support\Facades\Auth;
-=======
->>>>>>> b3dcc4ede97de022c721b533c6cb4526604dfa82
 use App\Models;
 use App\Models\User;
 use Illuminate\Auth\Middleware\Authorize;
@@ -23,23 +15,7 @@ use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class UserController extends Controller
-<<<<<<< HEAD
-
 {
-    public function myProjects(){
-        $user = Auth::user();
-        $projectList = $user->projects;
-        return view('myProjects')->with('projects', $projectList);
-    }
-
-    public function deleteUser($userId){
-        $user = User::find($userId);
-        $user->projects()->delete();
-        $user->forceDelete();
-    }
-=======
-{
->>>>>>> b3dcc4ede97de022c721b533c6cb4526604dfa82
     protected $guard;
     /*public function createUser(Request $request) {
 
