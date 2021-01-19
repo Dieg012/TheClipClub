@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aac45f51836bf49a83653393c4e5aaf6",
+    "content-hash": "488826e8d6585014354bb6f771aa9cac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1058,54 +1058,6 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
-        },
-        {
-            "name": "larasocket/larasocket-driver",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/larasocket/larasocket-driver.git",
-                "reference": "43f709ec2383cbc0805f82df0cc0f39e5a38573f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/larasocket/larasocket-driver/zipball/43f709ec2383cbc0805f82df0cc0f39e5a38573f",
-                "reference": "43f709ec2383cbc0805f82df0cc0f39e5a38573f",
-                "shasum": ""
-            },
-            "type": "project",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Larasocket\\LarasocketServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Larasocket\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Zach Vander Velden",
-                    "email": "zachvv11@gmail.com"
-                }
-            ],
-            "description": "Pay as you go broadcast driver for Laravel.",
-            "homepage": "https://larasocket.com",
-            "keywords": [
-                "Broadcast",
-                "driver",
-                "larasocket",
-                "laravel",
-                "websocket"
-            ],
-            "time": "2020-08-16T15:40:57+00:00"
         },
         {
             "name": "laravel/fortify",

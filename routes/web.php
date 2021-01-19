@@ -1,13 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\UserController;
-
-
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Route;
- 
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/chat', 'chat')->middleware(['auth:sanctum']);
+/* Route::get('/', function () {
+    return view('welcome');
+}); */
 
-
-Route::middleware(['auth:sanctum'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
-//PROJECTS
-Route::get('allProjects', [ProjectController::class, 'allProjects'])->name('allProjects');
-Route::get('myProjects',[UserController::class, 'myProjects'])->name('myProjects');
-Route::view('create', 'createProject')->name('create');
-Route::post('createProject/{userId}', [ProjectController::class, 'createProject'])->name('createProject');
-Route::delete('deleteProject/{projectId}', [ProjectController::class, 'deleteProject'])->name('delete_project');
-Route::delete('deleteUser/{userId}', [UserController::class, 'deleteUser'])->name('delete_user');
+
 
 Route::group(['middleware' => ['web']], function () {
 
