@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Project;
 use App\Http\Controllers\ProjectController;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models;
 use Illuminate\Auth\Middleware\Authorize;
 
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
