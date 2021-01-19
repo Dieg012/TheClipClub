@@ -10,7 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -73,4 +73,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function followers() {
+        return $this->belongsToMany('\App\Models\User', 'followers', 'follower_id', 'followed_id')->withTimestamps();
+    }
+
+    public function followeds() {
+        return $this->belongsToMany('\App\Models\User', 'followers', 'followed_id', 'follower_id')->withTimestamps();
+    }
 }

@@ -1,6 +1,11 @@
 <?php
+
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
+
+
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Route;
  
 
@@ -42,5 +47,12 @@ Route::group(['middleware' => ['web']], function () {
         })->where([
             'lang' => 'en|es'
         ]);
-    
     });
+Route::get('/profile', 'App\Http\Controllers\UserController@createProfile')->name('profile');
+Route::get('/followers', 'App\Http\Controllers\UserController@createFollowers')->name('followers');
+Route::get('/followeds', 'App\Http\Controllers\UserController@createFolloweds')->name('followeds');
+Route::post('/follow/{id}', 'App\Http\Controllers\UserController@followUser');
+Route::post('/unfollow/{id}', 'App\Http\Controllers\UserController@unfollowUser');
+Route::post('/registerTest', 'App\Http\Controllers\UserController@createUser')->name('registerTest');
+
+Route::post('/storageTest', 'App\Http\Controllers\UserController@save')->name('storageTest');
