@@ -60,4 +60,8 @@ class UserController extends Controller
         $user->followers()->detach(Auth::user()->id);
         return back();
     }
+
+    public function restoreAccount(Request $request) {
+
+    }
 }

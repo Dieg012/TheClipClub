@@ -91,6 +91,31 @@
                 <label class="form-check-label" for="agree">{{trans('messages.terms')}}</label>
               </div>
           </div>
+          <a href="" data-toggle="modal" data-target="#restoreAccount">{{trans('messages.restoreAccountMessage')}}</a>
+            <!-- Modal --->
+
+            <div class="modal" id="restoreAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">{{trans('messages.restoreAccountTitle')}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="/restoreAccount" method="POST">
+                        @csrf
+                        <p>{{trans('messages.restoreAccount')}}</p>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">{{trans('messages.send')}}</button>
+                          </div>
+                        </form>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
             <button type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
       </form>
     </x-jet-authentication-card>
