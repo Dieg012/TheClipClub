@@ -10,11 +10,12 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img src="/img/logo2.png" alt="">
         </x-slot>
 
             <!-- Modal --->
         <p>{{trans('messages.restoreAccountError')}}</p>
+        <a href="/register"><button class="btn btn-primary" type="">{{trans('messages.accept')}}</button></a>
     </x-jet-authentication-card>
 </x-guest-layout>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

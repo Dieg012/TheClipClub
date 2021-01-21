@@ -11,9 +11,11 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="/">
+                <img src="/img/logo2.png" alt="">
+            </a>
         </x-slot>
-        
+
         <x-jet-validation-errors class="mb-4" />
         <form action="{{route('login')}}" method="post">
           @csrf
@@ -26,13 +28,13 @@
                     <label for="validationDefault05">{{trans('messages.password')}}</label>
                     <input type="password" class="form-control" name="password" id="validationDefault05" required>
                   </div>
-                  
+
             </div>
 
             <div class="d-flex justify-content-center">
                 <button id="send" class="btn btn-primary btn-block m-0" type="submit">{{trans('messages.submit')}}</button>
             </div>
-            
+
           </form>
     </x-jet-authentication-card>
 </x-guest-layout>
