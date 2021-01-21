@@ -31,19 +31,19 @@ class RegisterController extends Controller
             'role4' => ['string'],
             'img'=>['image'],
             'bio' => ['string', 'max:255'],
-            'password' => ['string', 'max:255']
+            'password' => ['string', 'min:8', 'regex:/[A-Z][a-z][0-9]/']
         ]);
         $file = $request->file('img');
 
-       //obtenemos el nombre del archivo
-       $nombre = $file->getClientOriginalName();
+        //obtenemos el nombre del archivo
+        $nombre = $file->getClientOriginalName();
 
-       //indicamos que queremos guardar un nuevo archivo en el disco local
-       \Storage::disk('local')->put($nombre,  \File::get($file));
+        //indicamos que queremos guardar un nuevo archivo en el disco local
+        \Storage::disk('local')->put($nombre,  \File::get($file));
 
-       $request->merge(['img'=>$nombre]);
+        $request->merge(['img'=>$nombre]);
 
-       $request->merge(['originalName'=>$nombre]);
+        $request->merge(['originalName'=>$nombre]);
 
         event(new Registered($user = $creator->create($request->all())));
 
