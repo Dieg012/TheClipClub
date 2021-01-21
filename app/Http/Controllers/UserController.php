@@ -73,9 +73,7 @@ class UserController extends Controller
             $user->email_verified_at = null;
             $user->restore();
             $user->sendEmailVerificationNotification();
-            return $user->hasVerifiedEmail()
-                ? redirect()->intended(config('fortify.home'))
-                : app(VerifyEmailViewResponse::class);
+            return redirect('/login');
         }
         return view('restoreAccount');
     }
