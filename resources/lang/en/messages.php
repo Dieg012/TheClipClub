@@ -117,4 +117,5 @@ return[
     'restoreAccount'=>"We will send you a verification email to your account. Follow the instructions and you will have your account back.",
     'restoreAccountError'=>'The email introduced does not match any of our records',
     'accept'=>'Accept',
+    'changeProfileImg'=>'Change Profile Image',
 ];
