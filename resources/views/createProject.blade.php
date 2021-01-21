@@ -9,9 +9,9 @@
             </div>
             <hr>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Select a category</label>
+                <label for="exampleFormControlSelect1">{{trans('messages.catSelect')}}</label>
                 <select class="form-control" name="category" required>
-                <option disabled selected value >Category</option>
+                <option disabled selected value >{{trans('messages.category')}}</option>
                 <option value="Film">Film</option>
                 <option value="Short Film">Short Film</option>
                 <option value="Music video">Music video</option>
@@ -30,23 +30,23 @@
                 <div class="form-group form-row">
                     <div class="custom-control custom-checkbox ml-3">
                         <input class="custom-control-input" type="checkbox" value="Director" name="director" id="director">
-                        <label class="custom-control-label" for="director">Director</label>
+                        <label class="custom-control-label" for="director">{{trans('messages.director')}}</label>
                     </div>
                     <div class="custom-control custom-checkbox ml-3">
                         <input class="custom-control-input" type="checkbox" value="Actor" name="actor" id="actor"> 
-                        <label class="custom-control-label" for="actor">Actor</label>
+                        <label class="custom-control-label" for="actor">{{trans('messages.actor')}}</label>
                     </div>
                     <div class="custom-control custom-checkbox ml-3">
                         <input class="custom-control-input" type="checkbox" value="Technitian" name="technitian" id="technitian">
-                        <label class="custom-control-label" for="technitian">Technitian</label>
+                        <label class="custom-control-label" for="technitian">{{trans('messages.tech')}}</label>
                     </div>
                     <div class="custom-control custom-checkbox ml-3">
                         <input class="custom-control-input" type="checkbox" value="Producer" name="producer" id="producer">
-                        <label class="custom-control-label" for="producer">Producer</label>
+                        <label class="custom-control-label" for="producer">{{trans('messages.producers')}}</label>
                     </div>
                     <div class="custom-control custom-checkbox ml-3">
                         <input class="custom-control-input" type="checkbox" value="Screenwriter" name="screenwriter" id="screenwriter">
-                        <label class="custom-control-label" for="screenwriter">Screenwriter</label>
+                        <label class="custom-control-label" for="screenwriter">{{trans('messages.writer')}}</label>
                     </div>
                 </div>
             </div>
@@ -57,10 +57,10 @@
             </div>
             <hr>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
+                <label for="exampleFormControlTextarea1">{{trans('messages.description')}}</label>
                 <textarea class="form-control" name="description" rows="3" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
         </form>
     </div>
 </x-app-layout>

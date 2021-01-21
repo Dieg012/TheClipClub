@@ -27,6 +27,8 @@ return[
     'terms' => "Agree to terms and conditions",
     'submit' => "Submit",
     'logout' => "Log Out",
+    'description' => "Description",
+    'tags' => "Project Tags",
 
 
     //bienvenida

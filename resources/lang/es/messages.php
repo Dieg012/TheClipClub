@@ -27,6 +27,8 @@ return[
     'terms' => "Aceptar terminos y condiciones",
     'submit' => "Enviar",
     'logout' => "Salir",
+    'description' => "Descripcion",
+    'tags' => "Etiquetas",
 
     //bienvenida
 
@@ -40,7 +42,7 @@ return[
     'welcomeText2' => "No te preocupes, unete a la red social del mundo audiovisual y empieza tu proyecto",
     'join' => 'Únete',
     'users' => 'Usuarios',
-    'projects' => 'Projectos',
+    'projects' => 'Proyectos',
     'options' => 'Opciones',
 
     //Proyectos
@@ -64,6 +66,8 @@ return[
     'technitians' => 'Técnicos',
     'producers' => 'Productores',
     'writers' => 'Escritores',
+    'category' => "Category",
+    'catSelect' => "Select Category",
 
     //cards
 
