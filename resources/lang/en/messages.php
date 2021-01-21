@@ -114,5 +114,6 @@ return[
     'restoreAccountTitle'=>'Restore Account',
     'send'=>'send',
     'restoreAccountMessage'=>'Do you want to restore your account?',
-    'restoreAccount'=>"We will send you a verification email to your account. Follow the instructions and you will have your account back."
+    'restoreAccount'=>"We will send you a verification email to your account. Follow the instructions and you will have your account back.",
+    'restoreAccountError'=>'The email introduced does not match any of our records',
 ];

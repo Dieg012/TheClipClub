@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth as FacadesAuth;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
+
 
 class UserController extends Controller
 {
@@ -61,7 +63,20 @@ class UserController extends Controller
         return back();
     }
 
-    public function restoreAccount(Request $request) {
+    public function createRegister($message) {
+        return view('auth.register')->with(compact('message'));
+    }
 
+    public function restoreAccount(Request $request) {
+        $user = \App\Models\User::onlyTrashed()->where('email', $request->email)->first();
+        if($user !== null) {
+            $user->email_verified_at = null;
+            $user->restore();
+            $user->sendEmailVerificationNotification();
+            return $user->hasVerifiedEmail()
+                ? redirect()->intended(config('fortify.home'))
+                : app(VerifyEmailViewResponse::class);
+        }
+        return view('restoreAccount');
     }
 }
