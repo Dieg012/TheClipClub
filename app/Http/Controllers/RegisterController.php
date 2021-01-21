@@ -31,7 +31,7 @@ class RegisterController extends Controller
             'role4' => ['string'],
             'img'=>['image'],
             'bio' => ['string', 'max:255'],
-            'password' => ['string', 'min:8', 'regex:/[A-Z][a-z][0-9]/']
+            'password' => ['string', 'min:8', 'regex:/[A-Z]/', 'regex:/[a-z]/', 'regex:/[0-9]/']
         ]);
         $file = $request->file('img');
 
