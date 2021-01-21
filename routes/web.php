@@ -42,3 +42,4 @@ Route::post('/follow/{id}', 'App\Http\Controllers\UserController@followUser');
 Route::post('/unfollow/{id}', 'App\Http\Controllers\UserController@unfollowUser');
 Route::post('/restoreAccount', 'App\Http\Controllers\UserController@restoreAccount')->name('restoreAccount');
 Route::get('/registerAccountNotFound', 'App\Http\Controllers\UserController@createRegister')->name('restoreAccount');
+Route::post('/register', 'App\Http\Controllers\RegisterController@store')->name('register');
