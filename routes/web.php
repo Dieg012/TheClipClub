@@ -40,6 +40,5 @@ Route::get('/followers', 'App\Http\Controllers\UserController@createFollowers')-
 Route::get('/followeds', 'App\Http\Controllers\UserController@createFolloweds')->name('followeds');
 Route::post('/follow/{id}', 'App\Http\Controllers\UserController@followUser');
 Route::post('/unfollow/{id}', 'App\Http\Controllers\UserController@unfollowUser');
-Route::post('/registerTest', 'App\Http\Controllers\UserController@createUser')->name('registerTest');
-
-Route::post('/storageTest', 'App\Http\Controllers\UserController@save')->name('storageTest');
+Route::post('/restoreAccount', 'App\Http\Controllers\UserController@restoreAccount')->name('restoreAccount');
+Route::get('/registerAccountNotFound', 'App\Http\Controllers\UserController@createRegister')->name('restoreAccount');

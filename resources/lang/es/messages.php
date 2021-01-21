@@ -108,4 +108,11 @@ return[
     'spanish'=>'Español',
     'home'=>'Inicio',
     'profile'=>'Perfil',
+
+    //Restore Account
+    'restoreAccountTitle'=>'Recuperar Cuenta',
+    'send'=>'enviar',
+    'restoreAccountMessage'=>'¿Quieres recuperar tu cuenta?',
+    'restoreAccount'=>'Enviaremos un email de verificación a tu cuenta. Sigue los pasos y tendrás tu cuenta de vuelta.',
+    'restoreAccountError'=>'El email introducido no coincide con ninguno de nuestros registros',
 ];
