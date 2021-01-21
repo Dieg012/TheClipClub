@@ -20,7 +20,7 @@ return[
     'imageLabel' => "Choose an Image for your Username",
     'role' => "Role",
     'director' => "Director",
-    'actor' => "Actor",
+    'actor' => "Actor/Actrees",
     'writer' => "Screen Writer",
     'tech' => "Technician",
     'bio' => "Bio",
@@ -28,7 +28,10 @@ return[
     'submit' => "Submit",
     'logout' => "Log Out",
     'description' => "Description",
-    'tags' => "Project Tags",
+    'tag' => "Project Tags",
+    'category' => "Category ",
+    'catSelect' => "Select Category",
+    'needArtists' => "Needed artists",
 
 
     //bienvenida
@@ -52,6 +55,7 @@ return[
     'projectsText1' => 'Create your own project or join to one of the available ones.',
     'projectsText2' => 'Discover all the categories available',
     'explore' => 'Explore!',
+    'projectName' => 'Project Name',
     'tags' => 'Search projects by tags',
     'film' => '#film',
     'shortfilm' => '#shortfilm',
@@ -62,11 +66,14 @@ return[
     'comedy' => '#comedy',
     'drama' => '#drama',
     'newArtists' => 'Discover new artists',
-    'actors' => 'Actress',
     'directors' => 'Directos',
     'technitians' => 'Technicians',
     'producers' => 'Producers',
     'writers' => 'Writers',
+    'films' => "Film",
+    'shortFilm' => "Short Film",
+    'musicVideo' => "Music Video",
+    'photoShoot' => "Photo Shoot",
 
     //cards
 

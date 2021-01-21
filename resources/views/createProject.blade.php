@@ -4,7 +4,7 @@
         <form action="{{route('createProject', Auth::user()->id)}}" method="post">
         @csrf
             <div class="form-group">
-                <label>Project name</label>
+                <label>{{trans('messages.projectName')}}</label>
                 <input type="text" class="form-control" name="name" maxlenght="20" required>
             </div>
             <hr>
@@ -12,21 +12,21 @@
                 <label for="exampleFormControlSelect1">{{trans('messages.catSelect')}}</label>
                 <select class="form-control" name="category" required>
                 <option disabled selected value >{{trans('messages.category')}}</option>
-                <option value="Film">Film</option>
-                <option value="Short Film">Short Film</option>
-                <option value="Music video">Music video</option>
-                <option value="Photo shoot">Photo shoot</option>
+                <option value="Film">{{trans('messages.films')}}</option>
+                <option value="Short Film">{{trans('messages.shortFilm')}}</option>
+                <option value="Music video">{{trans('messages.musicVideo')}}</option>
+                <option value="Photo shoot">{{trans('messages.photoShoot')}}</option>
                 </select>
             </div>
             <hr>
             <div class="form-group">
-                <label>Project Tags</label>
+                <label>{{trans('messages.tag')}}</label>
                 <input class="form-control" type="text" name="tags" aria-describedby="tagHelp">
                 <small id="tagHelp" class="form-text text-muted">This will make easier for people to search your project</small>
             </div>
             <hr>
             <div>
-                <label>Needed artists</label>
+                <label>{{trans('messages.needArtists')}}</label>
                 <div class="form-group form-row">
                     <div class="custom-control custom-checkbox ml-3">
                         <input class="custom-control-input" type="checkbox" value="Director" name="director" id="director">
@@ -52,7 +52,7 @@
             </div>
             <hr>
             <div class="form-group">
-                <label for="exampleFormControlFile1">Image</label>
+                <label for="exampleFormControlFile1">{{trans('messages.image')}}</label>
                 <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
             </div>
             <hr>

@@ -1,38 +1,43 @@
 <x-app-layout>
     <div id="ProjectContainer" class="d-flex justify-content-around row">
         @foreach($projects as $project)
-        <div id="project" class="bg-white border border-secondary col-5 mt-2 p-2 rounded">
+        <div id="project" class="bg-white border border-secondary col-5  mt-2 p-2 rounded">
             <form action="{{route('delete_project', $project->id)}}" method="post">
             @method('delete')
             @csrf
                 <div>
                     <h3 class="text-center text-primary">{{$project->name}}</h3>
-                    <strong>Category</strong> {{$project->category}}
+                    <strong>{{trans('messages.category')}}</strong> 
                     <br>
-                    <strong>Tags</strong>
-                    @foreach ($project->tags as $tag)
-                    #{{$tag->tag}}
-                    @endforeach
+                    {{$project->category}}
                     <br>
-                    <strong>Dectiption</strong>
-                    {{$project->description}}
-                    <p>
-                            <strong>Needed artists</strong>
-                            @if ($project->director != null)
-                                {{$project->director}}
-                            @endif
-                            @if ($project->actor != null)
-                                {{$project->actor}}
-                            @endif
-                            @if ($project->technitian != null)
-                                {{$project->technitian}}
-                            @endif
-                            @if ($project->producer != null)
-                                {{$project->producer}}
-                            @endif
-                            @if ($project->screenwriter != null)
-                                {{$project->screenwriter}}
-                            @endif
+                    <strong>{{trans('messages.tag')}}</strong>
+                    <br>
+                        @foreach ($project->tags as $tag)
+                        <a href="">#{{$tag->tag}}</a> 
+                        @endforeach
+                    <br>
+                        <strong>{{trans('messages.needArtists')}}</strong>
+                        <br>
+                        @if ($project->director != null)
+                            {{trans('messages.producers')}}
+                        @endif
+                        @if ($project->actor != null)
+                            {{trans('messages.actor')}}
+                        @endif
+                        @if ($project->technitian != null)
+                            {{trans('messages.technitians')}}
+                        @endif
+                        @if ($project->producer != null)
+                            {{trans('messages.producers')}}
+                        @endif
+                        @if ($project->screenwriter != null)
+                            {{trans('messages.writers')}}
+                        @endif
+                        <br>
+                        <strong>{{trans('messages.description')}}</strong>
+                        <p class="text-justify">
+                        {{$project->description}}
                         </p>
                         <i class="d-flex justify-content-end">{{$project->updated_at}}</i>
                 </div>

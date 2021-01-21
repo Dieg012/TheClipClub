@@ -20,7 +20,7 @@ return[
     'imageLabel' => "Elige una imagen para tu usuario",
     'role' => "Rol",
     'director' => "Director",
-    'actor' => "Actor",
+    'actor' => "Actor/Actriz",
     'writer' => "Guionista",
     'tech' => "Tecnico",
     'bio' => "Biografia",
@@ -28,7 +28,7 @@ return[
     'submit' => "Enviar",
     'logout' => "Salir",
     'description' => "Descripcion",
-    'tags' => "Etiquetas",
+    'tag' => "Etiquetas",
 
     //bienvenida
 
@@ -51,6 +51,7 @@ return[
     'projectsText1' => 'Crea tu propio proyecto o unete a los cientos disponibles. ',
     'projectsText2' => 'Descrube las distintas categorías posibles',
     'explore' => '¡Explora!',
+    'projectName' => 'Nombre de projecto',
     'tags' => 'Busca los proyectos por las etiquetas',
     'film' => '#peliculas',
     'shortfilm' => '#cortos',
@@ -61,13 +62,18 @@ return[
     'comedy' => '#comedia',
     'drama' => '#drama',
     'newArtists' => 'Descubre nuevos artistas',
-    'actors' => 'Actrices',
+    'actors' => 'Actores',
     'directors' => 'Directores',
     'technitians' => 'Técnicos',
     'producers' => 'Productores',
     'writers' => 'Escritores',
-    'category' => "Category",
-    'catSelect' => "Select Category",
+    'category' => "Categoria",
+    'catSelect' => "Seleccionar categoria",
+    'needArtists' => "Artistas Solicitados",
+    'films' => "Pelicula",
+    'shortFilm' => "Cortometraje",
+    'musicVideo' => "Video Musical",
+    'photoShoot' => "Sesion De Fotos",
 
     //cards
 
