@@ -7,6 +7,8 @@ use Illuminate\Auth\Events\Registered;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\RegisterViewResponse;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Contracts\Auth\StatefulGuard;
 
 class RegisterController extends Controller
@@ -39,7 +41,7 @@ class RegisterController extends Controller
         $nombre = $file->getClientOriginalName();
 
         //indicamos que queremos guardar un nuevo archivo en el disco local
-        \Storage::disk('local')->put($nombre,  \File::get($file));
+        Storage::disk('local')->put($nombre,  File::get($file));
 
         $request->merge(['img'=>$nombre]);
 
