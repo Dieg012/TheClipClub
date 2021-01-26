@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="estiloFinal.css" rel="stylesheet">
+    <link href="{{asset('/css/estiloFinal.css')}}" rel="stylesheet">
 
 
 </head>
@@ -17,14 +17,14 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
+
         <div class="input-group">
-     
+
             <div class="input-group-append" id="button-addon4">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">{{trans('messages.login')}}</button>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">{{trans('messages.signIn')}}</button>
+              <button id="loginButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">{{trans('messages.login')}}</button>
+              <button id="registerButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">{{trans('messages.signIn')}}</button>
             </div>
           </div>
       <div class="input-group justify-content-end">
@@ -40,11 +40,11 @@
             </ul>
             </li>
         </div>
-    
+
     </div>
   </nav>
 
- 
+
 
 
     <!-- Modal Y Admin -->
@@ -58,7 +58,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body " id="loginModalBody"> 
+        <div class="modal-body " id="loginModalBody">
                 <div class="from-label-group">
                   <div class="col-md-9 mb-3">
                     <label for="validationDefault04">{{trans('messages.email')}}</label>
@@ -69,7 +69,7 @@
                     <input type="text" class="form-control" id="validationDefault05" required>
                   </div>
                 </div>
-                    <button id="send" class="btn btn-primary btn-block mt-3" type="submit">Login</button>       
+                    <button id="send" class="btn btn-primary btn-block mt-3" type="submit">Login</button>
         </div>
       </div>
     </div>
@@ -86,18 +86,28 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="loginModalBody"> 
-                <div class="from-label-group">
-                  <div class="col-md-9 mb-3">
-                    <label for="validationDefault04">{{trans('messages.email')}}</label>
-                    <input type="text" class="form-control" id="validationDefault04" required>
+        <div class="modal-body" id="loginModalBody">
+            <form id="loginForm" action="{{route('login')}}" method="post">
+                @csrf
+                @error('email')
+                    <div class="m-3">
+                        <strong style="color: red;">{{$message}}</strong>
+                    </div>
+                @enderror
+                  <div class="from-label-group ">
+                        <div class="col-md-12 mb-3">
+                          <label for="validationDefault04">{{trans('messages.email')}}</label>
+                          <input type="email" class="form-control" name="email" id="validationDefault04" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <label for="validationDefault05">{{trans('messages.password')}}</label>
+                          <input type="password" class="form-control" name="password" id="validationDefault05" required>
+                        </div>
                   </div>
-                  <div class="col-md-9 mb-3">
-                    <label for="validationDefault05">{{trans('messages.password')}}</label>
-                    <input type="text" class="form-control" id="validationDefault05" required>
+                  <div class="d-flex justify-content-center">
+                      <button id="loginSend" class="btn btn-primary btn-block m-0" type="submit">{{trans('messages.submit')}}</button>
                   </div>
-                </div>
-                    <button id="send" class="btn btn-primary btn-block mt-3" type="submit">Login</button>       
+                </form>
         </div>
         <div class="modal-footer">
           <p class="col-9 text-left">{{trans('messages.loginFooter')}}</p>
@@ -109,7 +119,7 @@
 
     <!-- Modal Y Registro -->
 
-     
+
 
 <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
   <div class="modal-dialog">
@@ -121,91 +131,100 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body"> 
-        <form>
-          <div class="form-row">
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault01">{{trans('messages.username')}}</label>
-              <input type="text" class="form-control" id="validationDefault01" value="" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault03">{{trans('messages.phone')}}</label>
-              <input type="text" class="form-control" id="validationDefault03" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for="validationDefault04">{{trans('messages.email')}}</label>
-              <input type="text" class="form-control" id="validationDefault04" required>
-            </div>
-       
-          </div>
-          <div class="form-row">
-          <div class="col-md-6 mb-3">
-              <label for="validationDefault05">{{trans('messages.password')}}</label>
-              <input type="text" class="form-control" id="validationDefault05" required>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="validationDefault05">{{trans('messages.confirmPassword')}}</label>
-              <input type="text" class="form-control" id="validationDefault05" required>
-            </div>
+      <div class="modal-body">
+        <form  method="POST" action="{{route ('register')}}" enctype="multipart/form-data" >
+            @csrf
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="name">{{trans('messages.username')}}</label>
+                  <input type="text" class="form-control" id="name" name="name" :value="old('name')" required>
+                  @error('name')
+                      <strong style="color: red;">{{$message}}</strong>
+                  @enderror
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="phone">{{trans('messages.phone')}}</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" required>
+                  @error('phone')
+                    <strong style="color: red;">{{$message}}</strong>
+                  @enderror
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="email">{{trans('messages.email')}}</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                  @error('email')
+                    <strong style="color: red;">{{$message}}</strong>
+                  @enderror
+                </div>
+              </div>
+              <div class="form-row">
+              <div class="col-md-6 mb-3">
+                  <label for="password">{{trans('messages.password')}}</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                  @error('password')
+                    <strong style="color: red;">{{$message}}</strong>
+                  @enderror
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="password_confirmation">{{trans('messages.confirmPassword')}}</label>
+                  <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+                </div>
+              </div>
 
-          </div>
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                <label for="customFile">{{trans('messages.image')}}</label>
+                <div class="form-group">
+                  <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
+                  @error('img')
+                    <strong style="color: red;">{{$message}}</strong>
+                  @enderror
+                </div>
+                </div>
+              </div>
 
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-           
-           
-           
-            <div class="form-group">
-              <label for="exampleFormControlFile1">{{trans('messages.image')}}</label>
-              <input type="file" class="form-control-file" id="exampleFormControlFile1">
-            </div>
-            </div>
-          </div>
-         
-            <label for="custom-control-input">{{trans('messages.role')}}</label>
-            <div class="col-md-12 mb-3">
-            <div class="form-row">
-              
-              <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input " id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">{{trans('messages.director')}}</label>
-              </div>
-              <div class="custom-control custom-checkbox ml-4">
-                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                <label class="custom-control-label" for="customCheck2">{{trans('messages.actor')}}</label>
-              </div>
-              <div class="custom-control custom-checkbox ml-4">
-                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                <label class="custom-control-label" for="customCheck3">{{trans('messages.writer')}}</label>
-              </div>
-              <div class="custom-control custom-checkbox ml-4">
-                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                <label class="custom-control-label" for="customCheck4">{{trans('messages.tech')}}</label>
-              </div>
-              </div>
-          </div>
-        
-          <div class="form-row">
-            <div class="col-md-12 mb-3">
-              <label for="validationDefault01">{{trans('messages.bio')}}</label>
-              <textarea type="text" class="form-control" id="validationDefault01" value="" required></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-              <label class="form-check-label" for="invalidCheck2">
-              {{trans('messages.terms')}}
-              </label>
-            </div>
-          </div>
+                <label for="custom-control-input">{{trans('messages.role')}}</label>
+                <div class="col-md-12 mb-3">
+                    <div class="form-row">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input " name="role1" value="{{trans('messages.director')}}" id="role1">
+                            <label class="custom-control-label" for="role1">{{trans('messages.director')}}</label>
+                        </div>
 
-  
-              <button type="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
-          
-        </form>
+                        <div class="custom-control custom-checkbox ml-4">
+                            <input type="checkbox" class="custom-control-input" name="role2" value="{{trans('messages.actor')}}" id="role2">
+                            <label class="custom-control-label" for="role2">{{trans('messages.actor')}}</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox ml-4">
+                            <input type="checkbox" class="custom-control-input" name="role3" value="{{trans('messages.writer')}}" id="role3">
+                            <label class="custom-control-label" for="role3">Screen {{trans('messages.writer')}}</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="role4" value="{{trans('messages.tech')}}" id="role4">
+                            <label class="custom-control-label" for="role4">{{trans('messages.tech')}}</label>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="bio">{{trans('messages.bio')}}</label>
+                  <textarea type="text" class="form-control" id="bio" name="bio" placeholder="Somethign you want to say to the world?" required></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree" required>
+                    <label class="form-check-label" for="agree">{{trans('messages.terms')}}</label>
+                  </div>
+              </div>
+                <button id="registerSend" type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
+          </form>
       </div>
       </div>
     </div>
@@ -232,7 +251,7 @@
                         <div class="flip-card col-lg-3 col-6 align-items-center mb-1">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front rounded">
-                              
+
                                     <img class="icono" src="img/camera.png" alt="Avatar">
                                 </div>
                                 <div class="flip-card-back rounded d-flex align-items-center">
@@ -282,7 +301,7 @@
         </div>
     </div>
 
-    
+
 
 <div id="lista" class="container-row text-center d-flex justify-content-center">
 <ul class="list-group list-group-horizontal">
@@ -403,12 +422,8 @@
                 </div>
             </div>
             </div>
-           
-
-
-             
         </section>
-    
+
     </div>
   </div>
 
@@ -470,16 +485,44 @@
               </div>
             </div>
           </div>
-        
+
           <div class="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="index.html">TheClipClub</a>
           </div>
-        
+
         </footer>
-   
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var modal;
+    var refresh = false;
+    var count = 0;
+    window.onload = initialize;
+    function initialize() {
+        $('#registerButton').click(whatModalIsExecuted);
+        $('#loginButton').click(whatModalIsExecuted);
+    }
+    function whatModalIsExecuted() {
+        modal = $(this).attr('id');
+        localStorage.setItem('modal', modal);
+        console.log(modal);
+    }
 
+    @if (count($errors) > 0)
+        if(localStorage.getItem('modal') == 'loginButton') {
+            $( document ).ready(function() {
+                $('#staticBackdrop').modal('show');
+            });
+        }
+        else {
+            $( document ).ready(function() {
+                $('#staticBackdrop2').modal('show');
+            });
+        }
+    @endif
+
+</script>
 </body>
 </html>
