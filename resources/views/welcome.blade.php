@@ -225,10 +225,10 @@
               </div>
                 <button id="registerSend" type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
           </form>
-          <a href="" data-toggle="modal" data-target="#restoreAccount">{{trans('messages.restoreAccountMessage')}}</a>
+          <a href="" data data-toggle="modal" data-target="#restoreAccount">{{trans('messages.restoreAccountMessage')}}</a>
             <!-- Modal Recuperar Cuenta--->
 
-            <div class="modal" data-dismiss="modal" id="restoreAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal"  id="restoreAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
