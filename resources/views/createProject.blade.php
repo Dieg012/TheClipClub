@@ -56,6 +56,11 @@
                 <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
             </div>
             <hr>
+            <div class="custom-control custom-checkbox ml-3">
+                <input class="custom-control-input" type="checkbox" value="Screenwriter" name="screenwriter" id="screenwriter">
+                <label class="custom-control-label" for="screenwriter">{{trans('messages.writer')}}</label>
+            </div>
+            <hr>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">{{trans('messages.description')}}</label>
                 <textarea class="form-control" name="description" rows="3" required></textarea>

@@ -18,6 +18,8 @@ class Project extends Model
         'producer',
         'screenwriter',
         'img',
+        'coordinatesX',
+        'coordinatesY',
     ];
 
     public function tags(){

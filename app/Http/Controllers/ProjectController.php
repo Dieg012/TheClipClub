@@ -23,6 +23,7 @@ class ProjectController extends Controller
             'producer' => $request->get('producer'),
             'screenwriter' => $request->get('screenwriter'),
             'img' => $request->get('img'),
+            'coordinates' => $request->get('coordinates'),
         ]);
         $this->saveTags($request, $user);
         return redirect('myProjects');
@@ -47,11 +48,17 @@ class ProjectController extends Controller
     * AUXILIARY METHODS *
     *********************
     */
-    /* public function deleteTags($projectTags){
-        foreach($projectTags as $tag){
-            $tag->delete();
-        }
-    } */
+
+    public function divideCoordinates($coordinates){
+        //Clear string from white spaces
+        $coordinates = $coordinates = preg_replace('/\s+/', '', $coordinates);
+        //Divide #tags
+        $coordinates = explode(',', $tags);
+        //array_shift($tags);
+        dd($coordinates);
+        return $coordinates;
+    }
+
     public function saveTags($request, $user){
         $tags = $this->separateTags($request);
         //CHECK IF TAGS ALREADY EXISTS IF NOT CREATE THEM
@@ -83,21 +90,6 @@ class ProjectController extends Controller
         }
         return $nonExistingTags;
     }
-    /* public function tagExists($tags){
-        //GET EXISTING TAGS
-        $existingTags = Array();
-        foreach ($tags as $tag){
-            $t = Tag::where('tag', $tag)->get();
-            array_push($existingTags, $t);
-        }
-        //CHECK IF THE NEW TAG ALREADY EXISTS
-        foreach ($tags as $tag){
-            if(in_array($tag, $existingTags)){
-                return true;
-            }
-        }
-        return false;
-    } */
 
     public function createTag($tags){
         foreach($tags as $tag){
