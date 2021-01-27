@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models;
 use App\Models\User;
+use App\Models\Project;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -16,13 +17,8 @@ use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
 
+class UserController extends Controller {
 
-<<<<<<< HEAD
-class UserController extends Controller
-{
-    protected $guard;
-=======
-{   
     public function myProjects(){
         $user = Auth::user();
         $projectList = $user->projects;
@@ -48,10 +44,9 @@ class UserController extends Controller
     public function deleteUser($userId){
         $user = User::find($userId);
         $user->projects()->delete();
-        $user->forceDelete();        
+        $user->forceDelete();
     }
     //protected $guard;
->>>>>>> projects
     /*public function createUser(Request $request) {
 
         event(new Registered($user = $creator->create($request->all())));
@@ -66,8 +61,9 @@ class UserController extends Controller
         $user = Auth::user();
         $followers = $user->followers;
         $followeds = $user->followeds;
+        $projects = \App\Models\Project::where('user_id', $user->id)->get();
 
-        return view('profile')->with(compact('user', 'followers', 'followeds'));
+        return view('profile')->with(compact('user', 'followers', 'followeds', 'projects'));
     }
 
     public function createFollowers() {

@@ -127,4 +127,5 @@ return[
     'restoreAccountError'=>'The email introduced does not match any of our records',
     'accept'=>'Accept',
     'changeProfileImg'=>'Change Profile Image',
+    'createProject'=>'Create A New Project',
 ];

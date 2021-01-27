@@ -10,7 +10,7 @@ class Tag extends Model
     use HasFactory;
     protected $primaryKey = 'tag';
     public $incrementing = false;
-    protected $keyType = 'string';
+    protected $keyType = 'string'; 
 
     protected $fillable = [
         'tag'

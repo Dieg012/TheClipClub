@@ -11,6 +11,10 @@ use Collection;
 
 class ProjectController extends Controller
 {
+    public function createProjectView(){
+        return view('createProject');
+    }
+
     public function createProject(ProjectValidation $request, $userId){
         $user = User::find($userId);
         $user->projects()->create([
