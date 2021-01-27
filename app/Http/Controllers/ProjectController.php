@@ -49,15 +49,15 @@ class ProjectController extends Controller
     *********************
     */
 
-    public function divideCoordinates($coordinates){
+    /* public function divideCoordinates($coordinates){
         //Clear string from white spaces
         $coordinates = $coordinates = preg_replace('/\s+/', '', $coordinates);
-        //Divide #tags
-        $coordinates = explode(',', $tags);
+        //Divide coordinates
+        $coordinates = explode(',', $coordinates);
         //array_shift($tags);
-        dd($coordinates);
+        //dd($coordinates);
         return $coordinates;
-    }
+    } */
 
     public function saveTags($request, $user){
         $tags = $this->separateTags($request);

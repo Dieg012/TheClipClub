@@ -23,6 +23,7 @@ class Project extends Migration
             $table->string('technitian')->nullable();
             $table->string('producer')->nullable();
             $table->string('screenwriter')->nullable();
+            $table->string('coordinates');
             $table->binary('img')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();

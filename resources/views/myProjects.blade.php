@@ -1,4 +1,7 @@
 <x-app-layout>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
     <div id="ProjectContainer" class="d-flex justify-content-around row">
         @foreach($projects as $project)
         <div id="project" class="bg-white border border-secondary col-5  mt-2 p-2 rounded">
@@ -39,6 +42,25 @@
                         <p class="text-justify">
                         {{$project->description}}
                         </p>
+                        <strong>Location</strong>
+                        <div id="{{$project->id}}" style="width: 100%; height: 400px;" class="border rounded">
+                            <script>
+                                var mymap = L.map('{{$project->id}}').setView([{{$project->coordinates}}], 13);
+                            
+                                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                                    maxZoom: 18,
+                                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                                        'Imagery  <a href="https://www.mapbox.com/">Mapbox</a>',
+                                    id: 'mapbox/streets-v11',
+                                    tileSize: 512,
+                                    zoomOffset: -1
+                                }).addTo(mymap);
+                                L.marker([{{$project->coordinates}}]).addTo(mymap)
+                                    .bindPopup("<strong>The best {{$project->category}} ever done.</strong>").openPopup();
+                            
+                                mymap.on('click', onMapClick);
+                                </script>
+                        </div>
                         <i class="d-flex justify-content-end">{{$project->updated_at}}</i>
                 </div>
                 <div>

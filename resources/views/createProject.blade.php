@@ -56,9 +56,10 @@
                 <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
             </div>
             <hr>
-            <div class="custom-control custom-checkbox ml-3">
-                <input class="custom-control-input" type="checkbox" value="Screenwriter" name="screenwriter" id="screenwriter">
-                <label class="custom-control-label" for="screenwriter">{{trans('messages.writer')}}</label>
+            <div class="form-group">
+                <label for="coordinates">Coordinates</label>
+                <input class="form-control" type="text" name="coordinates" id="coordinates">
+                <small id="coordinatesHelp" class="form-text text-muted">Right click on the site place and select the first option for getting the coordinates and the paste them here</small>
             </div>
             <hr>
             <div class="form-group">
