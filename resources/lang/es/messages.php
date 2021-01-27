@@ -20,13 +20,15 @@ return[
     'imageLabel' => "Elige una imagen para tu usuario",
     'role' => "Rol",
     'director' => "Director",
-    'actor' => "Actor",
+    'actor' => "Actor/Actriz",
     'writer' => "Guionista",
     'tech' => "Tecnico",
     'bio' => "Biografia",
     'terms' => "Aceptar terminos y condiciones",
     'submit' => "Enviar",
     'logout' => "Salir",
+    'description' => "Descripcion",
+    'tag' => "Etiquetas",
 
     //bienvenida
 
@@ -40,7 +42,7 @@ return[
     'welcomeText2' => "No te preocupes, unete a la red social del mundo audiovisual y empieza tu proyecto",
     'join' => 'Únete',
     'users' => 'Usuarios',
-    'projects' => 'Projectos',
+    'projects' => 'Proyectos',
     'options' => 'Opciones',
 
     //Proyectos
@@ -49,6 +51,7 @@ return[
     'projectsText1' => 'Crea tu propio proyecto o unete a los cientos disponibles. ',
     'projectsText2' => 'Descrube las distintas categorías posibles',
     'explore' => '¡Explora!',
+    'projectName' => 'Nombre de projecto',
     'tags' => 'Busca los proyectos por las etiquetas',
     'film' => '#peliculas',
     'shortfilm' => '#cortos',
@@ -59,11 +62,18 @@ return[
     'comedy' => '#comedia',
     'drama' => '#drama',
     'newArtists' => 'Descubre nuevos artistas',
-    'actors' => 'Actrices',
+    'actors' => 'Actores',
     'directors' => 'Directores',
     'technitians' => 'Técnicos',
     'producers' => 'Productores',
     'writers' => 'Escritores',
+    'category' => "Categoria",
+    'catSelect' => "Seleccionar categoria",
+    'needArtists' => "Artistas Solicitados",
+    'films' => "Pelicula",
+    'shortFilm' => "Cortometraje",
+    'musicVideo' => "Video Musical",
+    'photoShoot' => "Sesion De Fotos",
 
     //cards
 

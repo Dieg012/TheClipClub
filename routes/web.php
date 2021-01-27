@@ -23,6 +23,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
+Route::get('random', [UserController::class, 'getRandomProjects'])->name('random');
+
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
