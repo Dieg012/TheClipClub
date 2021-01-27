@@ -24,7 +24,8 @@ class Project extends Migration
             $table->string('producer')->nullable();
             $table->string('screenwriter')->nullable();
             $table->binary('img')->nullable();
-            $table->foreignId('user_id')->constrained();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
