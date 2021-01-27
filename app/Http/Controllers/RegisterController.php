@@ -24,7 +24,7 @@ class RegisterController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:40', 'unique:users'],
-            'phone' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:9', 'unique:users'],
+            'phone' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'max:9', 'min:9', 'unique:users'],
             'role1' => ['string'],
             'role2' => ['string'],
             'role3' => ['string'],
