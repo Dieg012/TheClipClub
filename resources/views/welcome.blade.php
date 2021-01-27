@@ -73,7 +73,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
 </div>
 
     <!-- Modal Y Login -->
@@ -257,16 +256,6 @@
     </div>
   </div>
 </div>
-=======
-    
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         {{trans('messages.lang')}}
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <a href="{{ url('lang', ['es']) }}">Castellano</a>
-      <a href="{{ url('lang', ['en']) }}">English</a>
->>>>>>> projects
 </div>
 
   <!-- Bienvenida -->
