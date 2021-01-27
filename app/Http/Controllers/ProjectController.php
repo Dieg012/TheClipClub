@@ -29,7 +29,7 @@ class ProjectController extends Controller
             'img' => $request->get('img'),
         ]);
         $this->saveTags($request, $user);
-        return redirect('myProjects');
+        return redirect('/profile');
     }
 
     public function deleteProject($id){

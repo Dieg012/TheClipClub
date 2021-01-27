@@ -15,9 +15,10 @@ class ProjectTagRelation extends Migration
     {
         Schema::create('project_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
             $table->string('tag');
-            $table->foreign('tag')->references('tag')->on('tags');
+            $table->foreign('tag')->references('tag')->on('tags')->onDelete('cascade');
             $table->timestamps();
         });
     }
