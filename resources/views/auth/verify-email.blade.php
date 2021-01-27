@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img src="/img/logo2.png" alt="">
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
@@ -19,9 +19,9 @@
                 @csrf
 
                 <div>
-                    <x-jet-button type="submit">
+                    <button class="btn btn-primary" type="submit">
                         {{ __('Resend Verification Email') }}
-                    </x-jet-button>
+                    </button>
                 </div>
             </form>
 

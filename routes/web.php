@@ -43,7 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/unfollow/{id}', 'App\Htt
 Route::post('/restoreAccount', 'App\Http\Controllers\UserController@restoreAccount')->name('restoreAccount');
 Route::get('/registerAccountNotFound', 'App\Http\Controllers\UserController@createRegister')->name('restoreAccount');
 Route::post('/register', 'App\Http\Controllers\RegisterController@store')->name('register');
-Route::get('/verificationEmail', function () {
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/verificationEmail', function () {
     Auth::user()->sendEmailVerificationNotification();
     return redirect('/email/verify');
-});
+});*/
