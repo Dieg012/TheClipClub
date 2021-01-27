@@ -31,7 +31,7 @@
             @method('delete')
             @csrf
                 <div>
-                    <h3 class="text-center text-primary">{{$project->name}}</h3>
+                    <h3 id="projectName" class="text-center text-primary"></h3>
                     <strong>{{trans('messages.category')}}</strong>
                     <br>
                     {{$project->category}}
@@ -90,5 +90,6 @@
     @endforeach
     </div>
 </main>
+<script src="{{asset('/js/projectsAjax.js')}}"></script>
 @endsection
 

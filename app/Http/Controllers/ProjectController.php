@@ -43,7 +43,7 @@ class ProjectController extends Controller
 
     public function allProjects(){
         $allProjects = Project::all();
-        return view('myProjects', ['projects' => $allProjects]);
+        return response()->json($allProjects,201);
     }
 
     /*
