@@ -45,7 +45,7 @@
                         <strong>{{trans('messages.needArtists')}}</strong>
                         <br>
                         @if ($project->director != null)
-                            {{trans('messages.producers')}}
+                            {{trans('messages.directors')}}
                         @endif
                         @if ($project->actor != null)
                             {{trans('messages.actor')}}
@@ -88,6 +88,9 @@
                 </div>
         </div>
     @endforeach
+    </div>
+    <div id="projects" class="d-flex justify-content-around row">
+
     </div>
 </main>
 <script src="{{asset('/js/projectsAjax.js')}}"></script>

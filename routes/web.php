@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::group(['middleware' => ['web']], function () {
         });
      Route::get('lang/{lang}', function ($lang) {
             session(['lang' => $lang]);
+            App::setLocale($lang);
             return \Redirect::back();
         })->where([
             'lang' => 'en|es'

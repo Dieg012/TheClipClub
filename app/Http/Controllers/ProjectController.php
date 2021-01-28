@@ -8,6 +8,8 @@ use App\Http\Requests\ProjectValidation;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Collection;
+use Illuminate\Support\Facades\App;
+use Illuminate\Http\JsonResponse;
 
 class ProjectController extends Controller
 {
@@ -42,8 +44,23 @@ class ProjectController extends Controller
     }
 
     public function allProjects(){
-        $allProjects = Project::all();
-        return response()->json($allProjects,201);
+        $allProjects = Project::with('tags')->get();
+        return new JsonResponse($allProjects);
+    }
+
+    public function categories() {
+        $categories = [
+            $category = trans('messages.category'),
+            $tags = trans('messages.tag'),
+            $artists = trans('messages.needArtists'),
+            $dire = trans('messages.directors'),
+            $actor = trans('messages.actor'),
+            $tech = trans('messages.technitians'),
+            $prod = trans('messages.producers'),
+            $writ = trans('messages.writers'),
+            $description = trans('messages.description'),
+        ];
+        return response()->json($categories, 201);
     }
 
     /*
