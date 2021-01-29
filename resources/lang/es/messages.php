@@ -106,7 +106,7 @@ return[
     'settings'=>'Opciones',
     'logout'=>'Cerrar Sesión',
     'manageAccount'=>'Gestionar Cuenta',
-
+    'profileSet'=>'Ajustes del Usuario',
     //followers/followed
 
     'unfollow'=>'siguiendo',

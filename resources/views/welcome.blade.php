@@ -12,68 +12,41 @@
 
 
   <!-- Navegador -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar d-flex justify-content-between navbar-expand-lg navbar-light ">
+
+  
     <a class="navbar-brand" href="#"> <img src="img/logo2.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    
+    
+    
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <div class="input-group">
-
-            <div class="input-group-append" id="button-addon4">
+        <div class="input-group  d-flex justify-content-end">
+          
               <button id="loginButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">{{trans('messages.login')}}</button>
               <button id="registerButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">{{trans('messages.signIn')}}</button>
-            </div>
-          </div>
-      <div class="input-group justify-content-end">
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#admin">{{trans('messages.admin')}}</button>
-        <li class="nav-item dropdown">
+    
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{trans('messages.lang')}}
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <ul>
-            <li><a href="{{ url('lang', ['es']) }}">Castellano</a></li>
-            <li><a href="{{ url('lang', ['en']) }}">English</a></li>
-            </ul>
-            </li>
+           
+              <div id="languages" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul>
+                <li><a href="{{ url('lang', ['es']) }}">Castellano</a></li>
+                <li><a href="{{ url('lang', ['en']) }}">English</a></li>
+                </ul>
+              </div>
+          
         </div>
+</div>
 
-    </div>
   </nav>
 
 
-
-
-    <!-- Modal Y Admin -->
-
-  <div class="modal fade" id="admin" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog"  id="loginModal">
-      <div class="modal-content  bg-secondary">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">{{trans('messages.adminArea')}}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body " id="loginModalBody">
-                <div class="from-label-group">
-                  <div class="col-md-9 mb-3">
-                    <label for="validationDefault04">{{trans('messages.email')}}</label>
-                    <input type="text" class="form-control" id="validationDefault04" required>
-                  </div>
-                  <div class="col-md-9 mb-3">
-                    <label for="validationDefault05">{{trans('messages.password')}}</label>
-                    <input type="text" class="form-control" id="validationDefault05" required>
-                  </div>
-                </div>
-                    <button id="send" class="btn btn-primary btn-block mt-3" type="submit">Login</button>
-        </div>
-      </div>
-    </div>
-</div>
 
     <!-- Modal Y Login -->
 
@@ -111,15 +84,12 @@
         </div>
         <div class="modal-footer">
           <p class="col-9 text-left">{{trans('messages.loginFooter')}}</p>
-          <button type="button" class="btn btn-primary"  data-toggle="modal"  data-target="#staticBackdrop2" data-dismiss="modal">{{trans('messages.signIn')}}</button>
+          <button type="button" class="btn btn-primary"  data-toggle="modal"  data-target="#staticBackdrop2">{{trans('messages.signIn')}}</button>
         </div>
       </div>
     </div>
 </div>
-
     <!-- Modal Y Registro -->
-
-
 
 <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
   <div class="modal-dialog">
@@ -225,10 +195,10 @@
               </div>
                 <button id="registerSend" type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
           </form>
-          <a href="" data-toggle="modal"  data-target="#restoreAccount">{{trans('messages.restoreAccountMessage')}}</a>
+          <a href="" data-toggle="modal" data-target="#restoreAccount">{{trans('messages.restoreAccountMessage')}}</a>
             <!-- Modal Recuperar Cuenta--->
 
-            <div class="modal"  id="restoreAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal" id="restoreAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -237,7 +207,7 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <div class="modal-body">
+                    <div id="restoreCountBody" class="modal-body">
                       <form action="/restoreAccount" method="POST">
                         @csrf
                         <p>{{trans('messages.restoreAccount')}}</p>
@@ -262,13 +232,13 @@
 
 
   <section id="welcome" class="container-fluid">
-          <section class="container-row p-4 align-items-center border-bottom">
+          <section id="welcomeCaja" class="container-row p-4 align-items-center border-bottom">
               <div id="fondo">
                 <div class="container-fluid">
                     <div id="bienvenida" class="text-center">
                         <h1>{{trans('messages.welcome')}}</h1>
                         <p class="col-12 text-center">{{trans('messages.welcomeText1')}}<br>{{trans('messages.welcomeText2')}}</p>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">{{trans('messages.join')}}</button>
+                        <button type="button" id="botonJoin" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">{{trans('messages.join')}}</button>
                     </div>
                 </div>
               </div>
@@ -403,7 +373,6 @@
     </div>
 
     <!--Cards-->
-
     <div class="container-row">
         <div class="col-12">
         <img id="roll" src="img/roll.jpg" alt="">
@@ -449,74 +418,9 @@
             </div>
             </div>
         </section>
-
     </div>
   </div>
-
-    <footer class="page-footer font-small unique-color-dark mt-3 rounded container-fluid">
-          <div class="container-fluid text-center text-md-left mt-5">
-            <div class="row mt-3">
-              <div class="col-md-5 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h3 class="text-uppercase font-weight-bold">The ClipClub</h3>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p class="text-center">
-                {{trans('messages.footerText')}}
-                </p>
-                <img class="logo" src="img/twitter.png" alt="twitter">
-                <img class="logo" src="img/facebook.png" alt="facebook">
-                <img class="logo" src="img/instagram.png" alt="instagram">
-                <img class="logo" src="img/tik-tok.png" alt="tik-tok">
-              </div>
-              <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h3 class="text-uppercase font-weight-bold">{{trans('messages.footerTitle1')}}</h3>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                  <a href="#">{{trans('messages.footer1')}}</a>
-                </p>
-                <p>
-                  <a href="#">{{trans('messages.footer2')}}</a>
-                </p>
-                <p>
-                  <a href="#">{{trans('messages.footer3')}}</a>
-                </p>
-                <p>
-                  <a href="#">{{trans('messages.footer4')}}</a>
-                </p>
-              </div>
-              <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h3 class="text-uppercase font-weight-bold">{{trans('messages.footerTitle2')}}</h3>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                  <a href="index.html">{{trans('messages.footer5')}}</a>
-                </p>
-                <p>
-                  <a href="#!">{{trans('messages.footer6')}}</a>
-                </p>
-                <p>
-                  <a href="#!">{{trans('messages.footer7')}}</a>
-                </p>
-              </div>
-              <div class="col-md-5 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                <h3 class="text-uppercase font-weight-bold">{{trans('messages.footerTitle3')}}</h3>
-                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                  Avda. Diagonal 640 planta 4 A 08017 Barcelona España
-                </p>
-                <p>
-                  info@clipclub.com</p>
-                <p>
-                  +34 666666666</p>
-                <p>
-                  +34 999999999</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="index.html">TheClipClub</a>
-          </div>
-
-        </footer>
+@include('layouts.footer')
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -529,6 +433,7 @@
     function initialize() {
         $('#registerButton').click(whatModalIsExecuted);
         $('#loginButton').click(whatModalIsExecuted);
+        iniciar();
     }
     function whatModalIsExecuted() {
         modal = $(this).attr('id');
@@ -548,7 +453,21 @@
             });
         }
     @endif
+    
+    //CALL TO ACTION
+    
+    /* let x = $(document);
+    x.ready = iniciar(); */
 
+    function iniciar(){
+
+    
+        setTimeout(function() {
+          let x = $("#staticBackdrop").modal('show');
+      }, 20000);
+  
+
+    }
 </script>
 </body>
 </html>
