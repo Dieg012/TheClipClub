@@ -76,8 +76,7 @@ return[
 
     //footer
 
-    'footerText' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit habitasse, netus a eu praesent etiam at mus, mollis luctus ligula fusce commodo posuere malesuada.
-    Dis nunc pulvinar viverra aptent metus justo consequat scelerisque, cum vehicula orci habitant at sagittis hac, class vel nisi sem est donec parturient.',
+    'footerText' => 'The ClipClub is the coolest and most used plataform for audiovisual workers and student. Join us and start craeting your own project!',
     'footerTitle1' => 'Content',
     'footerTitle2' => 'Useful links',
     'footerTitle3' => 'Contact',
@@ -97,6 +96,7 @@ return[
     'settings'=>'Settings',
     'logout'=>'Logout',
     'manageAccount'=>'Manage Account',
+    'profileSet'=>'Profile Settings',
 
     //followers/followeds
 
@@ -108,5 +108,14 @@ return[
     'english'=>'English',
     'spanish'=>'Spanish',
     'home'=>'Home',
-    'profile'=>'Profile'
+    'profile'=>'Profile',
+
+    //Restore Account
+    'restoreAccountTitle'=>'Restore Account',
+    'send'=>'send',
+    'restoreAccountMessage'=>'Do you want to restore your account?',
+    'restoreAccount'=>"We will send you a verification email to your account. Follow the instructions and you will have your account back.",
+    'restoreAccountError'=>'The email introduced does not match any of our records',
+    'accept'=>'Accept',
+    'changeProfileImg'=>'Change Profile Image',
 ];

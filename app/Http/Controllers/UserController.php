@@ -10,9 +10,12 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
+use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
+
 
 class UserController extends Controller
 {
@@ -59,5 +62,20 @@ class UserController extends Controller
         $user = \App\Models\User::findOrFail($id);
         $user->followers()->detach(Auth::user()->id);
         return back();
+    }
+
+    public function createRegister($message) {
+        return view('auth.register')->with(compact('message'));
+    }
+
+    public function restoreAccount(Request $request) {
+        $user = \App\Models\User::onlyTrashed()->where('email', $request->email)->first();
+        if($user !== null) {
+            $user->email_verified_at = null;
+            $user->restore();
+            $user->sendEmailVerificationNotification();
+            return redirect('/login');
+        }
+        return view('restoreAccount');
     }
 }

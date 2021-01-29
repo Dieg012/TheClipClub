@@ -10,9 +10,10 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <a href="/">
+                <img src="/img/logo2.png" alt="">
+            </a>
         </x-slot>
-
         <x-jet-validation-errors class="mb-4" />
 
         <form  method="POST" action="{{route ('register')}}" enctype="multipart/form-data" >
@@ -91,8 +92,35 @@
                 <label class="form-check-label" for="agree">{{trans('messages.terms')}}</label>
               </div>
           </div>
+
             <button type="submit" class="btn btn-primary float-right">{{trans('messages.submit')}}</button>
       </form>
+      <a href="" data-toggle="modal" data-target="#restoreAccount">{{trans('messages.restoreAccountMessage')}}</a>
+            <!-- Modal --->
+
+            <div class="modal" id="restoreAccount" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">{{trans('messages.restoreAccountTitle')}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="/restoreAccount" method="POST">
+                        @csrf
+                        <p>{{trans('messages.restoreAccount')}}</p>
+                        <input type="email" class="form-control m-1" id="email" name="email">
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">{{trans('messages.send')}}</button>
+                          </div>
+                        </form>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
     </x-jet-authentication-card>
 </x-guest-layout>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
