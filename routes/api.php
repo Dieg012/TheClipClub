@@ -18,5 +18,6 @@ use App\Http\Controllers\ProjectController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/myProjects', [ProjectController::class, 'allProjects']);
+Route::get('/myProjects/{id}', [ProjectController::class, 'myProjects']);
 Route::get('/categories', [ProjectController::class, 'categories']);
+Route::delete('/deleteProject/{id}', [ProjectController::class, 'apiDeleteProject']);

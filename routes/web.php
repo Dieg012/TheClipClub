@@ -46,7 +46,7 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/unfollow/{id}', 'App\Htt
 Route::post('/restoreAccount', 'App\Http\Controllers\UserController@restoreAccount')->name('restoreAccount');
 Route::get('/registerAccountNotFound', 'App\Http\Controllers\UserController@createRegister')->name('restoreAccount');
 Route::post('/register', 'App\Http\Controllers\RegisterController@store')->name('register');
-Route::middleware(['auth:sanctum', 'verified'])->get('/myProjects','App\Http\Controllers\ProjectController@allProjects')->name('myProjects');
+Route::middleware(['auth:sanctum', 'verified'])->get('/allProjects','App\Http\Controllers\ProjectController@allProjects')->name('showAllProjects');
 Route::middleware(['auth:sanctum', 'verified'])->get('/createProject','App\Http\Controllers\ProjectController@createProjectView')->name('showCreateProject');
 Route::middleware(['auth:sanctum', 'verified'])->post('/createProject/{userId}', 'App\Http\Controllers\ProjectController@createProject')->name('createProject');
 Route::middleware(['auth:sanctum', 'verified'])->delete('deleteProject/{projectId}', [ProjectController::class, 'deleteProject'])->name('delete_project');

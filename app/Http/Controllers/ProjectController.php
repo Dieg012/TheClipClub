@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
+use PhpParser\ErrorHandler\Collecting;
 
 class ProjectController extends Controller
 {
@@ -43,9 +45,27 @@ class ProjectController extends Controller
         return back();
     }
 
+    public function apiDeleteProject($id){
+        //$projectTags = Project::find($id)->tags;
+        //Project::find($id)->tags()->detach();
+        //DELTE TAGS ONLY IF THERE IS NO OTHER PROJECT WITH IT
+        //$this->deleteTags($projectTags);*/
+        Project::find($id)->delete();
+    }
+
+    public function myProjects($id){
+        $projects = Project::with('tags','user')->get();
+        foreach($projects as $project) {
+            if($project->user->id != $id) {
+                $projects->forget($project);
+            }
+        }
+        return new JsonResponse($projects,201);
+    }
+
     public function allProjects(){
-        $allProjects = Project::with('tags')->get();
-        return new JsonResponse($allProjects);
+        $allProjects = Project::all();
+        return view('myProjects', ['projects' => $allProjects]);
     }
 
     public function categories() {

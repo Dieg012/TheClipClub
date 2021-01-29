@@ -128,4 +128,5 @@ return[
     'accept'=>'Accept',
     'changeProfileImg'=>'Change Profile Image',
     'createProject'=>'Create A New Project',
+    'allProjects'=>'Manage Projects'
 ];

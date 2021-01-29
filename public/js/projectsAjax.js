@@ -1,14 +1,23 @@
-window.onload = initialize;
-var categories;
-function initialize() {
+let categories;
+let userId;
+function initialize(id) {
+    userId = id;
+    categoriesCall();
+    projectsCall(userId);
+}
+
+function categoriesCall() {
     $.ajax({
         url: '/api/categories',
         type: 'GET',
         dataType: 'json',
         success: printCategories,
     });
+}
+
+function projectsCall() {
     $.ajax({
-        url: '/api/myProjects',
+        url: '/api/myProjects/'+userId,
         type: 'GET',
         dataType: 'json',
         success: printProjects,
@@ -16,6 +25,7 @@ function initialize() {
 }
 
 function printProjects(json) {
+    $('#projects').empty();
     for(let i=0; i<json.length; i++) {
         let div;
         div = addName(json[i],div);
@@ -32,6 +42,15 @@ function printCategories(json) {
     categories = json;
 }
 
+function deleteProject(id) {
+    $.ajax({
+        url: '/api/deleteProject/'+id,
+        type: 'DELETE',
+        success: projectsCall,
+    })
+}
+
+//Auxiliar Methods
 function addName(json, div) {
     div = $('<div class="project bg-white border border-secondary col-5  mt-2 p-2 rounded">').appendTo('#projects');
     let projectName = json.name;
@@ -102,9 +121,8 @@ function addCreatedAt(json,div) {
 
 function addDeleteDiv(json,div) {
     let newDiv = $('<div class="deleteDiv">').appendTo(div);
-    let button = $('<button type="submit" style="width: 45px;" class="btn btn-danger" onclick="alert("sure?")"/>').appendTo(newDiv);
+    let button = $('<button type="button" style="width: 45px;" class="btn btn-danger" onclick="deleteProject('+json.id+')"/>').appendTo(newDiv);
     let img = $('<img class="deleteImg" src="/img/trash.png" >').appendTo(button);
-
 }
 
 function formatDate(datetime) {
