@@ -44,7 +44,6 @@
         </div>
 </div>
 
- 
   </nav>
 
 
@@ -90,10 +89,7 @@
       </div>
     </div>
 </div>
-
     <!-- Modal Y Registro -->
-
-
 
 <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
   <div class="modal-dialog">
@@ -377,7 +373,6 @@
     </div>
 
     <!--Cards-->
-
     <div class="container-row">
         <div class="col-12">
         <img id="roll" src="img/roll.jpg" alt="">
@@ -423,7 +418,6 @@
             </div>
             </div>
         </section>
-
     </div>
   </div>
 @include('layouts.footer')
@@ -435,14 +429,12 @@
     var modal;
     var refresh = false;
     var count = 0;
-    
     window.onload = initialize;
     function initialize() {
         $('#registerButton').click(whatModalIsExecuted);
         $('#loginButton').click(whatModalIsExecuted);
         iniciar();
     }
-    
     function whatModalIsExecuted() {
         modal = $(this).attr('id');
         localStorage.setItem('modal', modal);
@@ -475,10 +467,7 @@
       }, 20000);
   
 
-
     }
-  
-
 </script>
 </body>
 </html>

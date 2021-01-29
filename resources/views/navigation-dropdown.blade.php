@@ -22,6 +22,18 @@
                         {{ __('messages.profile') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('showCreateProject') }}" :active="request()->routeIs('showCreateProject')">
+                        {{ __('messages.createProject') }}
+                    </x-jet-nav-link>
+                </div>
+                @can('Admin')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('showAllProjects') }}" :active="request()->routeIs('showAllProjects')">
+                        {{ __('messages.allProjects') }}
+                    </x-jet-nav-link>
+                </div>
+                @endcan
             </div>
 
             <!-- Settings Dropdown -->
@@ -142,6 +154,11 @@
             <div class="pt-2 pb-3 space-y-1">
                 <x-jet-responsive-nav-link href="{{ route('profile') }}" :active="request()->routeIs('profile')">
                     {{ __('messages.profile') }}
+                </x-jet-responsive-nav-link>
+            </div>
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link href="{{ route('showCreateProject') }}" :active="request()->routeIs('showCreateProject')">
+                    {{ __('messages.createProject') }}
                 </x-jet-responsive-nav-link>
             </div>
         </div>
