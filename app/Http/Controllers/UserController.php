@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models;
 use App\Models\User;
+use App\Models\Project;
 use Illuminate\Auth\Middleware\Authorize;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -16,10 +17,36 @@ use Laravel\Fortify\Contracts\RegisterResponse;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Fortify\Contracts\VerifyEmailViewResponse;
 
+class UserController extends Controller {
 
-class UserController extends Controller
-{
-    protected $guard;
+    public function myProjects(){
+        $user = Auth::user();
+        $projectList = $user->projects;
+        return view('myProjects')->with('projects', $projectList);
+    }
+    //Falta redirigir a una view y pasar la info
+    public function getRandomProjects(){
+        $randProjects = Array();
+        $randosmIndexes = Array();
+        $projects = Project::latest();
+        dd($projects);
+        for($i=0;$i<2;$i++){
+            $a = rand(0, count($projects)-1);
+            if(!in_array($a, $randosmIndexes)){
+                array_push($randProjects, $projects[$a]);
+                array_push($randosmIndexes, $a);
+            }
+        }
+        return $randProjects;
+        //return view('blabla', [$randProjects, 'randProjects']);
+    }
+
+    public function deleteUser($userId){
+        $user = User::find($userId);
+        $user->projects()->delete();
+        $user->forceDelete();
+    }
+    //protected $guard;
     /*public function createUser(Request $request) {
 
         event(new Registered($user = $creator->create($request->all())));
@@ -34,8 +61,9 @@ class UserController extends Controller
         $user = Auth::user();
         $followers = $user->followers;
         $followeds = $user->followeds;
+        $projects = \App\Models\Project::where('user_id', $user->id)->get();
 
-        return view('profile')->with(compact('user', 'followers', 'followeds'));
+        return view('profile')->with(compact('user', 'followers', 'followeds', 'projects'));
     }
 
     public function createFollowers() {
