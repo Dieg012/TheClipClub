@@ -33,6 +33,7 @@ function printProjects(json) {
         div = addTags(json[i],div);
         div = addArtists(json[i],div);
         div = addDescription(json[i],div);
+        //div = addMap(json[i],div);
         div = addCreatedAt(json[i],div);
         div = addDeleteDiv(json[i],div);
     }
@@ -42,12 +43,16 @@ function printCategories(json) {
     categories = json;
 }
 
-function deleteProject(id) {
-    $.ajax({
-        url: '/api/deleteProject/'+id,
-        type: 'DELETE',
-        success: projectsCall,
-    })
+function showModal(id) {
+    console.log(id);
+    $('#deleteModal').modal('show');
+    $('#deleteProjectButton').click(function () {
+        $.ajax({
+            url: '/api/deleteProject/'+id,
+            type: 'DELETE',
+            success: projectsCall,
+        })
+    });
 }
 
 //Auxiliar Methods
@@ -112,6 +117,21 @@ function addDescription(json,div) {
     return div;
 }
 
+function addMap(json,div) {
+    let mapDiv = $('<div id="'+json.id+'" style="width: 100%; height: 400px;" class="border rounded">').appendTo(div);
+    var mymap = L.map(json.id).setView([json.coordinates], 13);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery  <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+    L.marker([json.coordinates]).addTo(mymap)
+        .bindPopup("<strong>The best"+json.category+" ever done.</strong>").openPopup();
+}
+
 function addCreatedAt(json,div) {
     let updated = json.updated_at;
     updated = formatDate(updated);
@@ -121,7 +141,7 @@ function addCreatedAt(json,div) {
 
 function addDeleteDiv(json,div) {
     let newDiv = $('<div class="deleteDiv">').appendTo(div);
-    let button = $('<button type="button" style="width: 45px;" class="btn btn-danger" onclick="deleteProject('+json.id+')"/>').appendTo(newDiv);
+    let button = $('<button type="button" style="width: 45px;" class="btn btn-danger" onclick="showModal('+json.id+')"/>').appendTo(newDiv);
     let img = $('<img class="deleteImg" src="/img/trash.png" >').appendTo(button);
 }
 

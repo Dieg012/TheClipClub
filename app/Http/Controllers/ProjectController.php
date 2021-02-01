@@ -31,6 +31,7 @@ class ProjectController extends Controller
             'producer' => $request->get('producer'),
             'screenwriter' => $request->get('screenwriter'),
             'img' => $request->get('img'),
+            'coordinates' => $request->get('coordinates'),
         ]);
         $this->saveTags($request, $user);
         return redirect('/profile');
