@@ -1,7 +1,7 @@
 <x-app-layout>
 <div class="container-fluid">
 <x-jet-validation-errors class="mb-4" />
-        <form action="{{route('createProject', Auth::user()->id)}}" method="post">
+        <form name="projectForm" action="{{route('createProject', Auth::user()->id)}}" method="post">
         @csrf
             <div class="form-group">
                 <label>{{trans('messages.projectName')}}</label>
@@ -59,14 +59,17 @@
             <div class="form-group">
                 <label for="coordinates">Coordinates</label>
                 <input class="form-control" type="text" name="coordinates" id="coordinates">
-                <small id="coordinatesHelp" class="form-text text-muted">Right click on the site place and select the first option for getting the coordinates and the paste them here</small>
+                <a href="https://www.google.es/maps/preview" target="_black">Maps</a>
+                <small id="coordinatesHelp" class="form-text text-muted">Right click on the wanted place and select the first option for getting the coordinates and the paste them here</small>
             </div>
             <hr>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">{{trans('messages.description')}}</label>
                 <textarea class="form-control" name="description" rows="3" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
+            <button type="button" id="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
         </form>
     </div>
+    <script src="{{ asset('js/validations.js')}}"></script>
+    <link href="{{ asset('css/estilo.css') }}" rel="stylesheet">
 </x-app-layout>
