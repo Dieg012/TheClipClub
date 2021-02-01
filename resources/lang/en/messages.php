@@ -132,4 +132,7 @@ return[
     'accept'=>'Accept',
     'changeProfileImg'=>'Change Profile Image',
 
+    //Users
+    'search'=>'Search',
+
 ];

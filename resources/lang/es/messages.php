@@ -131,4 +131,7 @@ return[
     'restoreAccountError'=>'El email introducido no coincide con ninguno de nuestros registros',
     'accept'=>'Aceptar',
     'changeProfileImg'=>'Cambiar Imagen de Perfil',
+
+    //Users
+    'search'=>'Buscar',
 ];

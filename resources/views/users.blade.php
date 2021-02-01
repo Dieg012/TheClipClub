@@ -3,6 +3,13 @@
 
     <div id="userContainer" class="container-fluid">
         <h2 class="col-12 text-center">{{trans('messages.users')}}</h2>
+        <hr>
+        <form class="col-12 col-md-5 col-lg-2 d-flex justify-content-center" action="">
+            @csrf
+            <input class="form-control mr-1" type="text">
+            <input type="button" class="btn btn-primary" value="{{trans('messages.search')}}">
+        </form>
+        <hr>
         <section class="col-md-4 justify-items-start">
             @foreach($users as $user)
                 @if($user->id != Auth::id())
@@ -37,4 +44,10 @@
             @endforeach
         </section>
     </div>
+    <script>
+        $(document).ready(init);
+        function init() {
+            $
+        }
+    </script>
 </x-app-layout>
