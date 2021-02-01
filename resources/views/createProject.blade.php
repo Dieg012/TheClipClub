@@ -33,7 +33,7 @@
                         <label class="custom-control-label" for="director">{{trans('messages.director')}}</label>
                     </div>
                     <div class="custom-control custom-checkbox ml-3">
-                        <input class="custom-control-input" type="checkbox" value="Actor" name="actor" id="actor"> 
+                        <input class="custom-control-input" type="checkbox" value="Actor" name="actor" id="actor">
                         <label class="custom-control-label" for="actor">{{trans('messages.actor')}}</label>
                     </div>
                     <div class="custom-control custom-checkbox ml-3">
@@ -67,7 +67,7 @@
                 <label for="exampleFormControlTextarea1">{{trans('messages.description')}}</label>
                 <textarea class="form-control" name="description" rows="3" required></textarea>
             </div>
-            <button type="button" id="submit" class="btn btn-primary">{{trans('messages.submit')}}</button>
+            <button type="button" id="send" class="btn btn-primary">{{trans('messages.submit')}}</button>
         </form>
     </div>
     <script src="{{ asset('js/validations.js')}}"></script>
