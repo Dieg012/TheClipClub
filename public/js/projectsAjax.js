@@ -33,7 +33,7 @@ function printProjects(json) {
         div = addTags(json[i],div);
         div = addArtists(json[i],div);
         div = addDescription(json[i],div);
-        div = addMap(json[i],div);
+        //div = addMap(json[i],div);
         div = addCreatedAt(json[i],div);
         div = addDeleteDiv(json[i],div);
     }
