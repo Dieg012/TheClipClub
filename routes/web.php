@@ -51,7 +51,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/createProject','App\Http\
 Route::middleware(['auth:sanctum', 'verified'])->post('/createProject/{userId}', 'App\Http\Controllers\ProjectController@createProject')->name('createProject');
 Route::middleware(['auth:sanctum', 'verified'])->delete('deleteProject/{projectId}', [ProjectController::class, 'deleteProject'])->name('delete_project');
 Route::middleware(['auth:sanctum', 'verified'])->delete('deleteUser/{userId}', [UserController::class, 'deleteUser'])->name('delete_user');
-/*Route::middleware(['auth:sanctum', 'verified'])->get('/verificationEmail', function () {
-    Auth::user()->sendEmailVerificationNotification();
-    return redirect('/email/verify');
-});*/
+Route::middleware(['auth:sanctum', 'verified'])->get('/users/{name?}', 'App\Http\Controllers\UserController@showUsers')->name('exploreUsers');

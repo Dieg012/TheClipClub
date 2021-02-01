@@ -118,6 +118,10 @@ return[
     'spanish'=>'Español',
     'home'=>'Inicio',
     'profile'=>'Perfil',
+    'createProject'=>'Crear Nuevo Proyecto',
+    'allProjects'=>'Gestionar Proyectos',
+    'exploreUsers' => 'Buscar Usuarios',
+    'manageUsers' => 'Gestionar Usuarios',
 
     //Restore Account
     'restoreAccountTitle'=>'Recuperar Cuenta',
@@ -127,6 +131,4 @@ return[
     'restoreAccountError'=>'El email introducido no coincide con ninguno de nuestros registros',
     'accept'=>'Aceptar',
     'changeProfileImg'=>'Cambiar Imagen de Perfil',
-    'createProject'=>'Crear Nuevo Proyecto',
-    'allProjects'=>'Gestionar Proyectos'
 ];

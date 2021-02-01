@@ -106,4 +106,13 @@ class UserController extends Controller {
         }
         return view('restoreAccount');
     }
+
+    public function showUsers($name = null) {
+        if($name != null) {
+
+        } else {
+            $users = User::all();
+            return view('users')->with(compact('users'));
+        }
+    }
 }
