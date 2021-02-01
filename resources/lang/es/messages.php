@@ -106,7 +106,7 @@ return[
     'settings'=>'Opciones',
     'logout'=>'Cerrar Sesión',
     'manageAccount'=>'Gestionar Cuenta',
-
+    'profileSet'=>'Ajustes del Usuario',
     //followers/followed
 
     'unfollow'=>'siguiendo',
@@ -128,4 +128,5 @@ return[
     'accept'=>'Aceptar',
     'changeProfileImg'=>'Cambiar Imagen de Perfil',
     'createProject'=>'Crear Nuevo Proyecto',
+    'allProjects'=>'Gestionar Proyectos'
 ];
