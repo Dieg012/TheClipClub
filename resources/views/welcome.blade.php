@@ -14,33 +14,33 @@
   <!-- Navegador -->
   <nav class="navbar d-flex justify-content-between navbar-expand-lg navbar-light ">
 
-  
+
     <a class="navbar-brand" href="#"> <img src="img/logo2.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
-    
-    
-    
+
+
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="input-group  d-flex justify-content-end">
-          
+
               <button id="loginButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">{{trans('messages.login')}}</button>
               <button id="registerButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">{{trans('messages.signIn')}}</button>
-    
+
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{trans('messages.lang')}}
             </a>
-           
+
               <div id="languages" class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <ul>
                 <li><a href="{{ url('lang', ['es']) }}">Castellano</a></li>
                 <li><a href="{{ url('lang', ['en']) }}">English</a></li>
                 </ul>
               </div>
-          
+
         </div>
 </div>
 
@@ -453,21 +453,21 @@
             });
         }
     @endif
-    
+
     //CALL TO ACTION
-    
+
     /* let x = $(document);
     x.ready = iniciar(); */
 
-    function iniciar(){
+    /*function iniciar(){
 
-    
+
         setTimeout(function() {
           let x = $("#staticBackdrop").modal('show');
       }, 20000);
-  
 
-    }
+
+    }*/
 </script>
 </body>
 </html>
