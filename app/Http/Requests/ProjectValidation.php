@@ -33,6 +33,7 @@ class ProjectValidation extends FormRequest
             'producer' => ['string'],
             'screenwriter' => ['string'],
             'tag' => ['max:255', 'unique:tags'],
+            'coordinates' => ['max:255', 'between:-90, 90']
         ];
     }
 }
