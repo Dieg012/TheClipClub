@@ -109,7 +109,8 @@ class UserController extends Controller {
 
     public function showUsers($name = null) {
         if($name != null) {
-
+            $users = User::where('name', 'LIKE', '%'.$name.'%')->get();
+            return view('users')->with(compact('users'));
         } else {
             $users = User::all();
             return view('users')->with(compact('users'));

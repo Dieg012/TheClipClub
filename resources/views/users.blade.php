@@ -4,10 +4,10 @@
     <div id="userContainer" class="container-fluid">
         <h2 class="col-12 text-center">{{trans('messages.users')}}</h2>
         <hr>
-        <form class="col-12 col-md-5 col-lg-2 d-flex justify-content-center" action="">
+        <form name="searchForm" id="searchForm" class="col-12 col-md-5 col-lg-2 d-flex justify-content-center" action="GET">
             @csrf
-            <input class="form-control mr-1" type="text">
-            <input type="button" class="btn btn-primary" value="{{trans('messages.search')}}">
+            <input id="searchParam" class="form-control mr-1" type="text">
+            <input type="button" class="btn btn-primary" id="searchButton" value="{{trans('messages.search')}}">
         </form>
         <hr>
         <section class="col-md-4 justify-items-start">
@@ -31,12 +31,12 @@
                         @if ($isFollowed === true)
                             <form class="col-md-5" action="/unfollow/{{$user->id}}" method="POST">
                                 @csrf
-                                <input class="col-md-12" type="submit" value='Unfollow'>
+                                <input class="col-md-12 btn btn-primary" type="submit" value='Unfollow'>
                             </form>
                         @else
                             <form class="col-md-5" action="/follow/{{$user->id}}" method="POST">
                                 @csrf
-                                <input class="col-md-12" type="submit" value='Follow'>
+                                <input class="col-md-12 btn btn-primary" type="submit" value='Follow'>
                             </form>
                         @endif
                     </div>
@@ -47,7 +47,19 @@
     <script>
         $(document).ready(init);
         function init() {
-            $
+            $('#searchButton').click(sendForm);
+            $(window).keydown(function(event) {
+                if(event.keyCode == 13) {
+                    event.preventDefault();
+                    sendForm();
+                    return false;
+                }
+            });
+        }
+        function sendForm() {
+            let param = $('#searchParam').val();
+            $('#searchForm').attr('action', '/users/'+param);
+            document.searchForm.submit();
         }
     </script>
 </x-app-layout>
