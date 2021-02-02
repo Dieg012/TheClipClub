@@ -40,6 +40,11 @@
                         {{ __('messages.allProjects') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('manageUsers') }}" :active="request()->routeIs('manageUsers')">
+                        {{ __('messages.manageUsers') }}
+                    </x-jet-nav-link>
+                </div>
                 @endcan
             </div>
 
@@ -174,11 +179,21 @@
                     {{ __('messages.createProject') }}
                 </x-jet-responsive-nav-link>
             </div>
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link href="{{ route('exploreUsers') }}" :active="request()->routeIs('exploreUsers')">
+                    {{ __('messages.exploreUsers') }}
+                </x-jet-responsive-nav-link>
+            </div>
             @endcan
             @can('Admin')
                 <div class="pt-2 pb-3 space-y-1">
                     <x-jet-responsive-nav-link href="{{ route('showAllProjects') }}" :active="request()->routeIs('showAllProjects')">
                         {{ __('messages.allProjects') }}
+                    </x-jet-responsive-nav-link>
+                </div>
+                <div class="pt-2 pb-3 space-y-1">
+                    <x-jet-responsive-nav-link href="{{ route('manageUsers') }}" :active="request()->routeIs('manageUsers')">
+                        {{ __('messages.manageUsers') }}
                     </x-jet-responsive-nav-link>
                 </div>
             @endcan

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +52,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/createProject','App\Http\
 Route::middleware(['auth:sanctum', 'verified'])->post('/createProject/{userId}', 'App\Http\Controllers\ProjectController@createProject')->name('createProject');
 Route::middleware(['auth:sanctum', 'verified'])->delete('deleteProject/{projectId}', [ProjectController::class, 'deleteProject'])->name('delete_project');
 Route::middleware(['auth:sanctum', 'verified'])->delete('deleteUser/{userId}', [UserController::class, 'deleteUser'])->name('delete_user');
+Route::middleware(['auth:sanctum', 'verified'])->post('/restoreUser/{userId}', [UserController::class, 'restoreUser'])->name('delete_user');
 Route::middleware(['auth:sanctum', 'verified'])->get('/users/{name?}', 'App\Http\Controllers\UserController@showUsers')->name('exploreUsers');
+Route::middleware(['auth:sanctum', 'verified'])->get('/manageUsers/{name?}', 'App\Http\Controllers\UserController@showManageUsers')->name('manageUsers');
