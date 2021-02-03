@@ -54,12 +54,14 @@ class ProjectController extends Controller
     }
 
     public function myProjects($id){
-        $projects = Project::with('tags','user')->get();
+        /*$projects = Project::with('tags','user')->get();
         foreach($projects as $project) {
             if($project->user->id != $id) {
                 $projects->forget($project->id);
             }
-        }
+        }*/
+        $user = User::find($id);
+        $projects = $user->projects;
         return new JsonResponse($projects,201);
     }
 
