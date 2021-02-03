@@ -50,7 +50,7 @@ function showModal(id) {
             url: '/api/deleteProject/'+id,
             type: 'DELETE',
             success: projectsCall,
-        })
+        });
     });
 }
 
@@ -116,10 +116,10 @@ function addDescription(json,div) {
     return div;
 }
 
-function addMap(json,div) {¡
+function addMap(json,div) {
     let coords = json.coordinates.split(',');
-    coords[0] = parseInt(coords[0]);
-    coords[1] = parseInt(coords[1]);
+    coords[0] = parseFloat(coords[0]);
+    coords[1] = parseFloat(coords[1]);
     console.log(coords[0]);
     console.log(coords[1]);
     let mapDiv = $('<div id="'+json.id+'" style="width: 100%; height: 400px;" class="border rounded">').appendTo(div);

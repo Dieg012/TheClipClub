@@ -37,8 +37,8 @@ class ProjectController extends Controller
     }
 
     public function deleteProject($id){
-        $projectTags = Project::find($id)->tags;
-        Project::find($id)->tags()->detach();
+        //$projectTags = Project::find($id)->tags;
+        //Project::find($id)->tags()->detach();
         //DELTE TAGS ONLY IF THERE IS NO OTHER PROJECT WITH IT
         //$this->deleteTags($projectTags);
         Project::find($id)->delete();
@@ -57,7 +57,7 @@ class ProjectController extends Controller
         $projects = Project::with('tags','user')->get();
         foreach($projects as $project) {
             if($project->user->id != $id) {
-                $projects->forget($project);
+                $projects->forget($project->id);
             }
         }
         return new JsonResponse($projects,201);
