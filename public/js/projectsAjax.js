@@ -27,13 +27,12 @@ function projectsCall() {
 function printProjects(json) {
     $('#projects').empty();
     for(let i=0; i<json.length; i++) {
-        let div;
-        div = addName(json[i],div);
+        let div = addName(json[i]);
         div = addCategory(json[i],div);
         div = addTags(json[i],div);
         div = addArtists(json[i],div);
         div = addDescription(json[i],div);
-        //div = addMap(json[i],div);
+        div = addMap(json[i],div);
         div = addCreatedAt(json[i],div);
         div = addDeleteDiv(json[i],div);
     }
@@ -56,8 +55,8 @@ function showModal(id) {
 }
 
 //Auxiliar Methods
-function addName(json, div) {
-    div = $('<div class="project bg-white border border-secondary col-5  mt-2 p-2 rounded">').appendTo('#projects');
+function addName(json) {
+    let div = $('<div class="project bg-white border border-secondary col-5  mt-2 p-2 rounded">').appendTo('#projects');
     let projectName = json.name;
     $('<h3 class="projectName text-center text-primary">'+projectName+'</h3>').appendTo(div);
     return div;
@@ -117,9 +116,14 @@ function addDescription(json,div) {
     return div;
 }
 
-function addMap(json,div) {
+function addMap(json,div) {¡
+    let coords = json.coordinates.split(',');
+    coords[0] = parseInt(coords[0]);
+    coords[1] = parseInt(coords[1]);
+    console.log(coords[0]);
+    console.log(coords[1]);
     let mapDiv = $('<div id="'+json.id+'" style="width: 100%; height: 400px;" class="border rounded">').appendTo(div);
-    var mymap = L.map(json.id).setView([json.coordinates], 13);
+    var mymap = L.map("" + json.id).setView(coords, 13);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -128,8 +132,10 @@ function addMap(json,div) {
         tileSize: 512,
         zoomOffset: -1
     }).addTo(mymap);
-    L.marker([json.coordinates]).addTo(mymap)
+    L.marker(coords).addTo(mymap)
         .bindPopup("<strong>The best"+json.category+" ever done.</strong>").openPopup();
+
+    return div;
 }
 
 function addCreatedAt(json,div) {
