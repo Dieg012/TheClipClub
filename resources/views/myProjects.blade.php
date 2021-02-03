@@ -4,7 +4,7 @@
     <div id="ProjectContainer" class="d-flex justify-content-around row p-3">
         @foreach($projects as $project)
         <div id="project" class="bg-white border border-secondary col-5  mt-2 p-2 rounded">
-            <form action="{{route('delete_project', $project->id)}}" method="post" name="project">
+            <form id="deleteForm" action="{{route('delete_project', $project->id)}}" method="post" name="project">
                 @method('delete')
                 @csrf
                 <div>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans ('messages.close')}}</button>
-                                    <button type="button" class="btn btn-danger submit" data-dismiss="modal">{{trans ('messages.delete')}}</button>
+                                    <button type="button" class="btn btn-danger send" data-dismiss="modal">{{trans ('messages.delete')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                             </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans ('messages.close')}}</button>
-                                            <button type="button" class="btn btn-danger submit" data-dismiss="modal">{{trans ('messages.delete')}}</button>
+                                            <button type="button" class="btn btn-danger send" data-dismiss="modal">{{trans ('messages.delete')}}</button>
                                         </div>
                                     </form>
                                     </div>
@@ -106,8 +106,8 @@
     <script>
         window.onload = init;
         function init(){
-            for(let i =0;i<document.getElementsByClassName("submit").length;i++){
-                document.getElementsByClassName("submit")[i].addEventListener("click", submitForm);
+            for(let i =0;i<document.getElementsByClassName("send").length;i++){
+                document.getElementsByClassName("send")[i].addEventListener("click", submitForm);
             }
         }
         function submitForm(){
