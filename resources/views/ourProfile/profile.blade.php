@@ -6,7 +6,7 @@
         <section class="col-12 col-md-3">
             <div class="row ">
                 <div class="col-12 d-flex justify-content-center">
-                    <img style="width: 200px; height: 200px" class="rounded-circle" src="../../../public/storage/{{$user->img}}" alt="{{$user->img}}" >
+                    <img style="width: 200px; height: 200px" class="rounded-circle" src="{{asset('/storage/'.$user->img)}}" alt="{{$user->img}}" >
                 </div>
             </div>
         </section>
