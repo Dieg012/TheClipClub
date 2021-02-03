@@ -1,6 +1,6 @@
 <x-app-layout>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-
+    <script src="{{asset('/js/jquery-3.5.1.min.js')}}"></script>
     <div id="userContainer" class="container-fluid">
         <h2 class="col-12 text-center">{{trans('messages.users')}}</h2>
         <hr>
