@@ -1,5 +1,6 @@
 @extends('layouts.profile')
 @section('profileContent')
+<script src="{{asset('/js/jquery-3.5.1.min.js')}}"></script>
 <main class="container-fluid">
     <div class="row align-items-center border-bottom p-5">
         <section class="col-12 col-md-3">
