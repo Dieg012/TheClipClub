@@ -1,7 +1,7 @@
 <x-app-layout>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 
-    <div id="ProjectContainer" class="d-flex justify-content-around row">
+    <div id="ProjectContainer" class="d-flex justify-content-around row p-3">
         @foreach($projects as $project)
         <div id="project" class="bg-white border border-secondary col-5  mt-2 p-2 rounded">
             <form action="{{route('delete_project', $project->id)}}" method="post" name="project">

@@ -42,9 +42,7 @@ class UserController extends Controller {
     }
 
     public function deleteUser($userId){
-        //dd($userId);
         $user = User::find($userId);
-        //$user->projects()->delete();
         $user->delete();
         return back();
     }

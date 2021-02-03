@@ -1,14 +1,11 @@
 @extends('layouts.profile')
 @section('profileContent')
 <main class="container-fluid">
-    <div class="row align-items-center border-bottom">
+    <div class="row align-items-center border-bottom p-5">
         <section class="col-12 col-md-3">
             <div class="row ">
                 <div class="col-12 d-flex justify-content-center">
                     <img style="width: 200px; height: 200px" class="rounded-circle" src="../storage/{{$user->img}}" alt="{{$user->img}}" >
-                </div>
-                <div class="col-12 d-flex justify-content-center">
-                    <a class="" href="">{{trans('messages.changeProfileImg')}}</a>
                 </div>
             </div>
         </section>
@@ -22,10 +19,10 @@
             <a class="row justify-content-center" href="/followers">{{trans('messages.followeds')}}</a>
         </section>
         </section>
-        <p class="col-12 bio">{{$user->bio}}</p>
-    </nav>
+        <p class="col-12 m-5 bio">{{$user->bio}}</p>
+    </div>
     <h2 class="col-12 text-center">{{trans('messages.projects')}}</h2>
-    <div id="projects" class="col-12 d-flex justify-content-around row"></div>
+    <div id="projects" class="col-12 d-flex justify-content-around row p-3"></div>
     <div class="modal fade" tabindex="-1" id="deleteModal" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

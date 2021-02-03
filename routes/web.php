@@ -22,7 +22,7 @@ use App\Http\Controllers\UserController;
 }); */
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('/profile');
 })->name('dashboard');
 
 
