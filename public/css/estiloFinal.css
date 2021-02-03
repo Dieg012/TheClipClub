@@ -127,7 +127,7 @@ border-bottom-left-radius:0px ;
 }
 footer{
     padding: 10px;
-    background-color: rgb(27, 38, 44);
+    background-color: rgb(25, 145, 209);
     bottom: -300px;
     color: white;
 }
@@ -246,10 +246,6 @@ li{
 }
 #profileHeader{
     background-color:  #46a9eb;
-}
-
-#profileMain{
-    background-color: #bbe1fa;
 }
 .btn-primary{
     background-color: #46a9eb;

@@ -17,7 +17,6 @@ class Project extends Model
         'thechnitian',
         'producer',
         'screenwriter',
-        'img',
         'coordinates'
     ];
 

@@ -30,7 +30,6 @@ class ProjectController extends Controller
             'technitian' => $request->get('technitian'),
             'producer' => $request->get('producer'),
             'screenwriter' => $request->get('screenwriter'),
-            'img' => $request->get('img'),
             'coordinates' => $request->get('coordinates'),
         ]);
         $this->saveTags($request, $user);

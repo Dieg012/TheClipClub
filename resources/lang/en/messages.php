@@ -118,6 +118,10 @@ return[
     'spanish'=>'Spanish',
     'home'=>'Home',
     'profile'=>'Profile',
+    'createProject'=>'Create A New Project',
+    'allProjects'=>'Manage Projects',
+    'exploreUsers' => 'Search Users',
+    'manageUsers' => 'Manage Users',
 
     //Restore Account
     'restoreAccountTitle'=>'Restore Account',
@@ -127,6 +131,15 @@ return[
     'restoreAccountError'=>'The email introduced does not match any of our records',
     'accept'=>'Accept',
     'changeProfileImg'=>'Change Profile Image',
-    'createProject'=>'Create A New Project',
-    'allProjects'=>'Manage Projects'
+
+    //Users
+    'search'=>'Search',
+
+    //Modal
+    'attention' => "Warning!",
+    'delete' => "Delete",
+    'close' => "Close",
+    'warning_message' => "Are you sure you want to delete it?",
+
+
 ];

@@ -58,11 +58,6 @@
             </div>
             <hr>
             <div class="form-group">
-                <label for="exampleFormControlFile1">{{trans('messages.image')}}</label>
-                <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
-            </div>
-            <hr>
-            <div class="form-group">
                 <label for="exampleFormControlTextarea1">{{trans('messages.description')}}</label>
                 <textarea class="form-control" name="description" rows="3" required></textarea>
             </div>
