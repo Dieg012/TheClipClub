@@ -135,5 +135,11 @@ return[
     //Users
     'search'=>'Search',
 
+    //Modal
+    'attention' => "Warning!",
+    'delete' => "Delete",
+    'close' => "Close",
+    'warning_message' => "Are you sure you want to delete it?",
+
 
 ];

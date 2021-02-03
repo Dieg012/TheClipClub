@@ -55,17 +55,17 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Attention!</h5>
+                                    <h5 class="modal-title">{{trans ('messages.attention')}}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Are you sure you want to delete it?</p>
+                                    <p>{{trans ('messages.warning_message')}}</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger submit" data-dismiss="modal">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans ('messages.close')}}</button>
+                                    <button type="button" class="btn btn-danger submit" data-dismiss="modal">{{trans ('messages.delete')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -90,11 +90,11 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure you want to delete it?</p>
+                                                <p>{{trans ('messages.warning_message')}}</p>
                                             </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-danger submit" data-dismiss="modal">Delete</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans ('messages.close')}}</button>
+                                            <button type="button" class="btn btn-danger submit" data-dismiss="modal">{{trans ('messages.delete')}}</button>
                                         </div>
                                     </form>
                                     </div>

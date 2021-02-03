@@ -134,4 +134,8 @@ return[
 
     //Users
     'search'=>'Buscar',
+    'attention' => "Atencion!",
+    'delete' => "Eliminar",
+    'close' => "Cerrar",
+    'warning_message' => "¿Estas seguro que quieres eliminarlo?",
 ];
