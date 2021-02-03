@@ -43,8 +43,8 @@ class UserController extends Controller {
 
     public function deleteUser($userId){
         $user = User::find($userId);
-        $user->projects()->delete();
-        $user->forceDelete();
+        $user->delete();
+        return back();
     }
     //protected $guard;
     /*public function createUser(Request $request) {
@@ -105,5 +105,31 @@ class UserController extends Controller {
             return redirect('/login');
         }
         return view('restoreAccount');
+    }
+
+    public function showUsers($name = null) {
+        if($name != null) {
+            $users = User::where('name', 'LIKE', '%'.$name.'%')->get();
+            return view('users')->with(compact('users'));
+        } else {
+            $users = User::all();
+            return view('users')->with(compact('users'));
+        }
+    }
+
+    public function showManageUsers($name = null) {
+        if($name != null) {
+            $users = User::withTrashed()->where('name', 'LIKE', '%'.$name.'%')->get();
+            return view('userManagement')->with(compact('users'));
+        } else {
+            $users = User::withTrashed()->get();
+            return view('userManagement')->with(compact('users'));
+        }
+    }
+
+    public function restoreUser($userId) {
+        $user = User::withTrashed()->find($userId);
+        $user->restore();
+        return redirect('/manageUsers');
     }
 }

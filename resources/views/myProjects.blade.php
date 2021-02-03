@@ -1,7 +1,7 @@
 <x-app-layout>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 
-    <div id="ProjectContainer" class="d-flex justify-content-around row">
+    <div id="ProjectContainer" class="d-flex justify-content-around row p-3">
         @foreach($projects as $project)
         <div id="project" class="bg-white border border-secondary col-5  mt-2 p-2 rounded">
             <form action="{{route('delete_project', $project->id)}}" method="post" name="project">
@@ -55,17 +55,17 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Attention!</h5>
+                                    <h5 class="modal-title">{{trans ('messages.attention')}}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Are you sure you want to delete it?</p>
+                                    <p>{{trans ('messages.warning_message')}}</p>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger submit" data-dismiss="modal">Delete</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans ('messages.close')}}</button>
+                                    <button type="button" class="btn btn-danger submit" data-dismiss="modal">{{trans ('messages.delete')}}</button>
                                 </div>
                             </div>
                         </div>
@@ -84,17 +84,17 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Attention!</h5>
+                                                <h5 class="modal-title">{{trans ('messages.attention')}}!</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <p>Are you sure you want to delete it?</p>
+                                                <p>{{trans ('messages.warning_message')}}</p>
                                             </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-danger submit" data-dismiss="modal">Delete</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{trans ('messages.close')}}</button>
+                                            <button type="button" class="btn btn-danger submit" data-dismiss="modal">{{trans ('messages.delete')}}</button>
                                         </div>
                                     </form>
                                     </div>

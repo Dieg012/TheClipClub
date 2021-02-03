@@ -10,7 +10,5 @@
     @section('profileContent')
 
     @show
-
-@include('layouts.footer')
 </body>
 </html>
