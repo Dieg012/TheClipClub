@@ -37,29 +37,15 @@ class ProjectController extends Controller
     }
 
     public function deleteProject($id){
-        //$projectTags = Project::find($id)->tags;
-        //Project::find($id)->tags()->detach();
-        //DELTE TAGS ONLY IF THERE IS NO OTHER PROJECT WITH IT
-        //$this->deleteTags($projectTags);
         Project::find($id)->delete();
         return back();
     }
 
     public function apiDeleteProject($id){
-        //$projectTags = Project::find($id)->tags;
-        //Project::find($id)->tags()->detach();
-        //DELTE TAGS ONLY IF THERE IS NO OTHER PROJECT WITH IT
-        //$this->deleteTags($projectTags);*/
         Project::find($id)->delete();
     }
 
     public function myProjects($id){
-        /*$projects = Project::with('tags','user')->get();
-        foreach($projects as $project) {
-            if($project->user->id != $id) {
-                $projects->forget($project->id);
-            }
-        }*/
         $user = User::find($id);
         $projects = $user->projects;
         return new JsonResponse($projects,201);
@@ -90,11 +76,7 @@ class ProjectController extends Controller
     * AUXILIARY METHODS *
     *********************
     */
-    /* public function deleteTags($projectTags){
-        foreach($projectTags as $tag){
-            $tag->delete();
-        }
-    } */
+    
     public function saveTags($request, $user){
         $tags = $this->separateTags($request);
         //CHECK IF TAGS ALREADY EXISTS IF NOT CREATE THEM
@@ -126,21 +108,6 @@ class ProjectController extends Controller
         }
         return $nonExistingTags;
     }
-    /* public function tagExists($tags){
-        //GET EXISTING TAGS
-        $existingTags = Array();
-        foreach ($tags as $tag){
-            $t = Tag::where('tag', $tag)->get();
-            array_push($existingTags, $t);
-        }
-        //CHECK IF THE NEW TAG ALREADY EXISTS
-        foreach ($tags as $tag){
-            if(in_array($tag, $existingTags)){
-                return true;
-            }
-        }
-        return false;
-    } */
 
     public function createTag($tags){
         foreach($tags as $tag){
