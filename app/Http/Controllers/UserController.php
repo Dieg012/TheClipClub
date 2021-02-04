@@ -46,16 +46,7 @@ class UserController extends Controller {
         $user->delete();
         return back();
     }
-    //protected $guard;
-    /*public function createUser(Request $request) {
-
-        event(new Registered($user = $creator->create($request->all())));
-
-        $this->guard->login($user);
-
-        return app(RegisterResponse::class);
-        //return view('dashboard');
-    }*/
+    
 
     public function createProfile() {
         $user = Auth::user();
