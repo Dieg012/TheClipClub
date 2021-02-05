@@ -3,9 +3,9 @@ return[
 
     //Navbar
 
-    'login' => "Login",
+    'login' => "Iniciar sesion",
     'signIn' => "Registrate",
-    'lang' => "idioma",
+    'lang' => "Idioma",
     'admin' => "Administrador",
     'adminArea' => "Area del Administrador",
     'email' => "Email",
@@ -33,7 +33,7 @@ return[
     //bienvenida
 
     'flip1' => "Comparte tus proyectos y se parte de otros",
-    'flip2' => "Sigue a otros artisas y crea grandes colaboraciones",
+    'flip2' => "Sigue a otros artisas y participa en grandes colaboraciones",
     'flip3' => "Comunicate entre los integrantes del proyecto",
     'flip4' => "Explora los proyectos de otros y descubre a grandes artistas",
 
@@ -48,13 +48,13 @@ return[
     //Proyectos
 
     'projectsText' => 'Cientos de proyectos audiovisuales a tu alcance',
-    'projectsText1' => 'Crea tu propio proyecto o unete a los cientos disponibles. ',
+    'projectsText1' => 'Crea tu propio proyecto o unete a los cientos disponibles.',
     'projectsText2' => 'Descrube las distintas categorías posibles',
-    'explore' => '¡Explora!',
+    'explore' => '¡Explorar!',
     'projectName' => 'Nombre de projecto',
     'tags' => 'Busca los proyectos por las etiquetas',
     'film' => '#peliculas',
-    'shortfilm' => '#cortos',
+    'shortfilm' => '#cortometrajes',
     'documentary' => '#documentales',
     'videoclip' => '#videoclips',
     'photos' => '#photografias',
@@ -68,7 +68,7 @@ return[
     'producers' => 'Productores',
     'writers' => 'Escritores',
     'category' => "Categoria",
-    'catSelect' => "Seleccionar categoria",
+    'catSelect' => "Seleccionar Categoria",
     'needArtists' => "Artistas Solicitados",
     'films' => "Pelicula",
     'shortFilm' => "Cortometraje",
@@ -77,10 +77,10 @@ return[
 
     //cards
 
-    'cardsTitle' => 'Actores, actrices, directorrs, camaras...',
-    'cardsText1' => 'Todo el mundo tiene cabida en The Clip Club',
+    'cardsTitle' => 'Actores, actrices, directores, camaras...',
+    'cardsText1' => 'Todo el mundo tiene cavidad en The Clip Club',
     'cardsText2' => 'Unete y conecta con miles de usuarios',
-    'cardsDesc1' => "Hola! My nombre es Tina y soy de Atlanta. He trabajado como actriz en muchas películas los últimos 20 años. Soy la reina del drama!",
+    'cardsDesc1' => "Hola! Mi nombre es Tina y soy de Atlanta. He trabajado como actriz en muchas películas los últimos 20 años. Soy la reina del drama!",
     'cardsDesc2' => 'Desde Misisipi hasta tu proyecto. Actuar es mi pasión y si lo que buscas es un actor versatil con mucha experiencia, soy tu opción',
 
     //footer
@@ -109,8 +109,8 @@ return[
     'profileSet'=>'Ajustes del Usuario',
     //followers/followed
 
-    'unfollow'=>'siguiendo',
-    'follow'=>'seguir',
+    'unfollow'=>'Dejar de seguir',
+    'follow'=>'Seguir',
 
     //menu
 
@@ -125,7 +125,7 @@ return[
 
     //Restore Account
     'restoreAccountTitle'=>'Recuperar Cuenta',
-    'send'=>'enviar',
+    'send'=>'Enviar',
     'restoreAccountMessage'=>'¿Quieres recuperar tu cuenta?',
     'restoreAccount'=>'Enviaremos un email de verificación a tu cuenta. Sigue los pasos y tendrás tu cuenta de vuelta.',
     'restoreAccountError'=>'El email introducido no coincide con ninguno de nuestros registros',
