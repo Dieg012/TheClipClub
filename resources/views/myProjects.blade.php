@@ -124,8 +124,6 @@
         }).addTo(mymap);
         L.marker([{{$project->coordinates}}]).addTo(mymap)
             .bindPopup("<strong>The best {{$project->category}} ever done.</strong>").openPopup();
-
-        mymap.on('click', onMapClick);
     </script>
     @endforeach
     </div>
